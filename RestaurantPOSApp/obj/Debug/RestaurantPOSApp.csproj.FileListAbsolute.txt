@@ -7,3 +7,4 @@ C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\bin\Debug\Restauran
 C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\bin\Debug\RestaurantPOSApp.pdb
 C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.exe
 C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.pdb
+C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Form1_rename.resources
