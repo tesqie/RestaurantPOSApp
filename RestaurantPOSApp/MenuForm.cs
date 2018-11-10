@@ -16,5 +16,11 @@ namespace RestaurantPOSApp
         {
             InitializeComponent();
         }
+
+        private void employeeLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InventoryForm f = new InventoryForm();
+            f.Show();
+        }
     }
 }
