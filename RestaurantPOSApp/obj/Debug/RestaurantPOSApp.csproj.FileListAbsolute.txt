@@ -1,0 +1,9 @@
+C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.csprojAssemblyReference.cache
+C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Properties.Resources.resources
+C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.csproj.GenerateResource.cache
+C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\bin\Debug\RestaurantPOSApp.exe.config
+C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\bin\Debug\RestaurantPOSApp.exe
+C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\bin\Debug\RestaurantPOSApp.pdb
+C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.exe
+C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.pdb
