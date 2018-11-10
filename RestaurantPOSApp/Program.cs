@@ -16,7 +16,7 @@ namespace RestaurantPOSApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1_rename());
+            Application.Run(new Form1());
         }
     }
 }
