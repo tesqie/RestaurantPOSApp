@@ -16,5 +16,10 @@ namespace RestaurantPOSApp
         {
             InitializeComponent();
         }
+
+        private void InventoryForm_Load(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Properties.Resources.menu_frame;
+        }
     }
 }
