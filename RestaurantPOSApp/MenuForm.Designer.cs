@@ -51,7 +51,11 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+<<<<<<< HEAD
             this.button1 = new System.Windows.Forms.Button();
+=======
+            this.employeeLoginToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> master
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,26 +73,45 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.employeeLoginToolStripMenuItem});
+            this.employeeLoginToolStripMenuItem,
+            this.employeeLoginToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+<<<<<<< HEAD
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(722, 28);
+=======
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(541, 24);
+>>>>>>> master
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // employeeLoginToolStripMenuItem
             // 
             this.employeeLoginToolStripMenuItem.Name = "employeeLoginToolStripMenuItem";
+<<<<<<< HEAD
             this.employeeLoginToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
             this.employeeLoginToolStripMenuItem.Text = "Employee Login";
+=======
+            this.employeeLoginToolStripMenuItem.Size = new System.Drawing.Size(69, 22);
+            this.employeeLoginToolStripMenuItem.Text = "Inventory";
+            this.employeeLoginToolStripMenuItem.Click += new System.EventHandler(this.employeeLoginToolStripMenuItem_Click);
+>>>>>>> master
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(235, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 17);
+=======
+            this.label1.Location = new System.Drawing.Point(176, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 13);
+>>>>>>> master
             this.label1.TabIndex = 2;
             this.label1.Text = "Meal Time";
             // 
@@ -97,38 +120,67 @@
             this.panel1.Controls.Add(this.richTextBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
+<<<<<<< HEAD
             this.panel1.Location = new System.Drawing.Point(42, 74);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(477, 59);
+=======
+            this.panel1.Location = new System.Drawing.Point(31, 60);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(358, 48);
+>>>>>>> master
             this.panel1.TabIndex = 3;
             // 
             // richTextBox1
             // 
+<<<<<<< HEAD
             this.richTextBox1.Location = new System.Drawing.Point(168, 14);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(296, 44);
+=======
+            this.richTextBox1.Location = new System.Drawing.Point(126, 11);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(223, 36);
+>>>>>>> master
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "Random description will be placed here";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(116, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 17);
+=======
+            this.label2.Location = new System.Drawing.Point(87, 3);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+>>>>>>> master
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::RestaurantPOSApp.Properties.Resources.logo;
+<<<<<<< HEAD
             this.pictureBox1.Location = new System.Drawing.Point(4, 3);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(108, 54);
+=======
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(81, 44);
+>>>>>>> master
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -138,19 +190,33 @@
             this.panel2.Controls.Add(this.pictureBox6);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.richTextBox2);
+<<<<<<< HEAD
             this.panel2.Location = new System.Drawing.Point(42, 145);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(477, 59);
+=======
+            this.panel2.Location = new System.Drawing.Point(31, 118);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(358, 48);
+>>>>>>> master
             this.panel2.TabIndex = 4;
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::RestaurantPOSApp.Properties.Resources.logo;
+<<<<<<< HEAD
             this.pictureBox6.Location = new System.Drawing.Point(4, 3);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(108, 54);
+=======
+            this.pictureBox6.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(81, 44);
+>>>>>>> master
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 8;
             this.pictureBox6.TabStop = false;
@@ -158,19 +224,34 @@
             // label3
             // 
             this.label3.AutoSize = true;
+<<<<<<< HEAD
             this.label3.Location = new System.Drawing.Point(116, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 17);
+=======
+            this.label3.Location = new System.Drawing.Point(87, 10);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+>>>>>>> master
             this.label3.TabIndex = 4;
             this.label3.Text = "label3";
             // 
             // richTextBox2
             // 
+<<<<<<< HEAD
             this.richTextBox2.Location = new System.Drawing.Point(168, 13);
             this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
             this.richTextBox2.Size = new System.Drawing.Size(296, 45);
+=======
+            this.richTextBox2.Location = new System.Drawing.Point(126, 10);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(223, 37);
+>>>>>>> master
             this.richTextBox2.TabIndex = 3;
             this.richTextBox2.Text = "";
             // 
@@ -179,19 +260,33 @@
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.richTextBox3);
+<<<<<<< HEAD
             this.panel3.Location = new System.Drawing.Point(42, 221);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(477, 60);
+=======
+            this.panel3.Location = new System.Drawing.Point(31, 179);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(358, 49);
+>>>>>>> master
             this.panel3.TabIndex = 5;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::RestaurantPOSApp.Properties.Resources.logo;
+<<<<<<< HEAD
             this.pictureBox2.Location = new System.Drawing.Point(4, 6);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(108, 54);
+=======
+            this.pictureBox2.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(81, 44);
+>>>>>>> master
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -199,19 +294,34 @@
             // label4
             // 
             this.label4.AutoSize = true;
+<<<<<<< HEAD
             this.label4.Location = new System.Drawing.Point(117, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 17);
+=======
+            this.label4.Location = new System.Drawing.Point(88, 6);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+>>>>>>> master
             this.label4.TabIndex = 4;
             this.label4.Text = "label4";
             // 
             // richTextBox3
             // 
+<<<<<<< HEAD
             this.richTextBox3.Location = new System.Drawing.Point(168, 6);
             this.richTextBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
             this.richTextBox3.Size = new System.Drawing.Size(296, 55);
+=======
+            this.richTextBox3.Location = new System.Drawing.Point(126, 5);
+            this.richTextBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
+            this.richTextBox3.Size = new System.Drawing.Size(223, 46);
+>>>>>>> master
             this.richTextBox3.TabIndex = 3;
             this.richTextBox3.Text = "";
             // 
@@ -220,19 +330,33 @@
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.richTextBox4);
+<<<<<<< HEAD
             this.panel4.Location = new System.Drawing.Point(42, 297);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(477, 53);
+=======
+            this.panel4.Location = new System.Drawing.Point(31, 241);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(358, 43);
+>>>>>>> master
             this.panel4.TabIndex = 6;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::RestaurantPOSApp.Properties.Resources.logo;
+<<<<<<< HEAD
             this.pictureBox3.Location = new System.Drawing.Point(4, 2);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(108, 54);
+=======
+            this.pictureBox3.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(81, 44);
+>>>>>>> master
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
@@ -240,19 +364,34 @@
             // label5
             // 
             this.label5.AutoSize = true;
+<<<<<<< HEAD
             this.label5.Location = new System.Drawing.Point(117, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 17);
+=======
+            this.label5.Location = new System.Drawing.Point(88, 8);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+>>>>>>> master
             this.label5.TabIndex = 4;
             this.label5.Text = "label5";
             // 
             // richTextBox4
             // 
+<<<<<<< HEAD
             this.richTextBox4.Location = new System.Drawing.Point(168, 7);
             this.richTextBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox4.Name = "richTextBox4";
             this.richTextBox4.ReadOnly = true;
             this.richTextBox4.Size = new System.Drawing.Size(296, 44);
+=======
+            this.richTextBox4.Location = new System.Drawing.Point(126, 6);
+            this.richTextBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.ReadOnly = true;
+            this.richTextBox4.Size = new System.Drawing.Size(223, 36);
+>>>>>>> master
             this.richTextBox4.TabIndex = 3;
             this.richTextBox4.Text = "";
             // 
@@ -261,19 +400,32 @@
             this.panel5.Controls.Add(this.pictureBox4);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.richTextBox5);
+<<<<<<< HEAD
             this.panel5.Location = new System.Drawing.Point(42, 362);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(477, 58);
+=======
+            this.panel5.Location = new System.Drawing.Point(31, 294);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(358, 47);
+>>>>>>> master
             this.panel5.TabIndex = 7;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::RestaurantPOSApp.Properties.Resources.logo;
             this.pictureBox4.Location = new System.Drawing.Point(0, 3);
+<<<<<<< HEAD
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(108, 54);
+=======
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(81, 44);
+>>>>>>> master
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
@@ -281,14 +433,22 @@
             // label6
             // 
             this.label6.AutoSize = true;
+<<<<<<< HEAD
             this.label6.Location = new System.Drawing.Point(117, 6);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 17);
+=======
+            this.label6.Location = new System.Drawing.Point(88, 5);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+>>>>>>> master
             this.label6.TabIndex = 4;
             this.label6.Text = "label6";
             // 
             // richTextBox5
             // 
+<<<<<<< HEAD
             this.richTextBox5.Location = new System.Drawing.Point(168, 3);
             this.richTextBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox5.Name = "richTextBox5";
@@ -312,6 +472,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 430);
             this.Controls.Add(this.button1);
+=======
+            this.richTextBox5.Location = new System.Drawing.Point(126, 3);
+            this.richTextBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.ReadOnly = true;
+            this.richTextBox5.Size = new System.Drawing.Size(223, 38);
+            this.richTextBox5.TabIndex = 3;
+            this.richTextBox5.Text = "";
+            // 
+            // employeeLoginToolStripMenuItem1
+            // 
+            this.employeeLoginToolStripMenuItem1.Name = "employeeLoginToolStripMenuItem1";
+            this.employeeLoginToolStripMenuItem1.Size = new System.Drawing.Size(104, 22);
+            this.employeeLoginToolStripMenuItem1.Text = "Employee Login";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(541, 350);
+>>>>>>> master
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -320,7 +501,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> master
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
@@ -370,7 +555,11 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+<<<<<<< HEAD
         private System.Windows.Forms.Button button1;
+=======
+        private System.Windows.Forms.ToolStripMenuItem employeeLoginToolStripMenuItem1;
+>>>>>>> master
     }
 }
 
