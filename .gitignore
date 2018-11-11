@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 *.ide-shm
 RestaurantPOSApp/.vs/RestaurantPOSApp/v15/.suo
+*.ide-wal
