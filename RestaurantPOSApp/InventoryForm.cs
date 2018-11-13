@@ -21,5 +21,10 @@ namespace RestaurantPOSApp
         {
             this.BackgroundImage = Properties.Resources.menu_frame;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
