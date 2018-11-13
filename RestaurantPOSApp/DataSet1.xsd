@@ -2,14 +2,15 @@
 <xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="RestaurantDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="RestaurantDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.RestaurantPOSApp.Properties.Settings.GlobalReference.Default.RestaurantDBConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="RestaurantDBConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="RestaurantDBConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.RestaurantPOSApp.Properties.Settings.GlobalReference.Default.RestaurantDBConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EmployeesTableAdapter" GeneratorDataComponentClassName="EmployeesTableAdapter" Name="Employees" UserDataComponentName="EmployeesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="RestaurantDBConnectionString (Settings)" DbObjectName="RestaurantDB.dbo.Employees" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RestaurantDBConnectionString1 (Settings)" DbObjectName="RestaurantDB.dbo.Employees" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Employees] WHERE (([EmployeeID] = @Original_EmployeeID) AND ((@IsNull_EmployeeName = 1 AND [EmployeeName] IS NULL) OR ([EmployeeName] = @Original_EmployeeName)) AND ((@IsNull_EmployeeUserName = 1 AND [EmployeeUserName] IS NULL) OR ([EmployeeUserName] = @Original_EmployeeUserName)) AND ((@IsNull_EmployeePassword = 1 AND [EmployeePassword] IS NULL) OR ([EmployeePassword] = @Original_EmployeePassword)))</CommandText>
@@ -70,9 +71,58 @@ SELECT EmployeeID, EmployeeName, EmployeeUserName, EmployeePassword FROM Employe
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SuppliersTableAdapter" GeneratorDataComponentClassName="SuppliersTableAdapter" Name="Suppliers" UserDataComponentName="SuppliersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RestaurantDBConnectionString1 (Settings)" DbObjectName="RestaurantDB.dbo.Suppliers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Suppliers] WHERE (([SupplierID] = @Original_SupplierID) AND ((@IsNull_SupplierName = 1 AND [SupplierName] IS NULL) OR ([SupplierName] = @Original_SupplierName)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SupplierID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SupplierID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SupplierName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SupplierName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SupplierName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SupplierName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Suppliers] ([SupplierName]) VALUES (@SupplierName);
+SELECT SupplierID, SupplierName FROM Suppliers WHERE (SupplierID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SupplierName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SupplierName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SupplierID, SupplierName FROM dbo.Suppliers</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Suppliers] SET [SupplierName] = @SupplierName WHERE (([SupplierID] = @Original_SupplierID) AND ((@IsNull_SupplierName = 1 AND [SupplierName] IS NULL) OR ([SupplierName] = @Original_SupplierName)));
+SELECT SupplierID, SupplierName FROM Suppliers WHERE (SupplierID = @SupplierID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SupplierName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SupplierName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SupplierID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SupplierID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SupplierName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SupplierName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SupplierName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SupplierName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="SupplierID" ColumnName="SupplierID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SupplierID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="SupplierID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SupplierID" DataSetColumn="SupplierID" />
+              <Mapping SourceColumn="SupplierName" DataSetColumn="SupplierName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InventoryTableAdapter" GeneratorDataComponentClassName="InventoryTableAdapter" Name="Inventory" UserDataComponentName="InventoryTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="RestaurantDBConnectionString (Settings)" DbObjectName="RestaurantDB.dbo.Inventory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RestaurantDBConnectionString1 (Settings)" DbObjectName="RestaurantDB.dbo.Inventory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Inventory] WHERE (([ProductID] = @Original_ProductID) AND ((@IsNull_ProductName = 1 AND [ProductName] IS NULL) OR ([ProductName] = @Original_ProductName)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)) AND ([OnHand] = @Original_OnHand) AND ([SupplierID] = @Original_SupplierID))</CommandText>
@@ -138,7 +188,7 @@ SELECT ProductID, ProductName, Price, OnHand, SupplierID FROM Inventory WHERE (P
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MenuTableAdapter" GeneratorDataComponentClassName="MenuTableAdapter" Name="Menu" UserDataComponentName="MenuTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="RestaurantDBConnectionString (Settings)" DbObjectName="RestaurantDB.dbo.Menu" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RestaurantDBConnectionString1 (Settings)" DbObjectName="RestaurantDB.dbo.Menu" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Menu] WHERE (([MenuID] = @Original_MenuID) AND ((@IsNull_MealType = 1 AND [MealType] IS NULL) OR ([MealType] = @Original_MealType)) AND ((@IsNull_MenuName = 1 AND [MenuName] IS NULL) OR ([MenuName] = @Original_MenuName)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)))</CommandText>
@@ -201,7 +251,7 @@ SELECT MenuID, MealType, MenuName, Price FROM Menu WHERE (MenuID = @MenuID)</Com
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrderlineTableAdapter" GeneratorDataComponentClassName="OrderlineTableAdapter" Name="Orderline" UserDataComponentName="OrderlineTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="RestaurantDBConnectionString (Settings)" DbObjectName="RestaurantDB.dbo.Orderline" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RestaurantDBConnectionString1 (Settings)" DbObjectName="RestaurantDB.dbo.Orderline" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[Orderline] ([OrderID], [MenuID], [Quantity]) VALUES (@OrderID, @MenuID, @Quantity)</CommandText>
@@ -230,7 +280,7 @@ SELECT MenuID, MealType, MenuName, Price FROM Menu WHERE (MenuID = @MenuID)</Com
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrdersTableAdapter" GeneratorDataComponentClassName="OrdersTableAdapter" Name="Orders" UserDataComponentName="OrdersTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="RestaurantDBConnectionString (Settings)" DbObjectName="RestaurantDB.dbo.Orders" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="RestaurantDBConnectionString1 (Settings)" DbObjectName="RestaurantDB.dbo.Orders" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Orders] WHERE (([OrderID] = @Original_OrderID) AND ((@IsNull_OrderDate = 1 AND [OrderDate] IS NULL) OR ([OrderDate] = @Original_OrderDate)) AND ([EmployeeID] = @Original_EmployeeID))</CommandText>
@@ -282,55 +332,6 @@ SELECT OrderID, OrderDate, EmployeeID FROM Orders WHERE (OrderID = @OrderID)</Co
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SuppliersTableAdapter" GeneratorDataComponentClassName="SuppliersTableAdapter" Name="Suppliers" UserDataComponentName="SuppliersTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="RestaurantDBConnectionString (Settings)" DbObjectName="RestaurantDB.dbo.Suppliers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Suppliers] WHERE (([SupplierID] = @Original_SupplierID) AND ((@IsNull_SupplierName = 1 AND [SupplierName] IS NULL) OR ([SupplierName] = @Original_SupplierName)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SupplierID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SupplierID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SupplierName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SupplierName" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SupplierName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SupplierName" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Suppliers] ([SupplierName]) VALUES (@SupplierName);
-SELECT SupplierID, SupplierName FROM Suppliers WHERE (SupplierID = SCOPE_IDENTITY())</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SupplierName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SupplierName" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT SupplierID, SupplierName FROM dbo.Suppliers</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Suppliers] SET [SupplierName] = @SupplierName WHERE (([SupplierID] = @Original_SupplierID) AND ((@IsNull_SupplierName = 1 AND [SupplierName] IS NULL) OR ([SupplierName] = @Original_SupplierName)));
-SELECT SupplierID, SupplierName FROM Suppliers WHERE (SupplierID = @SupplierID)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SupplierName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SupplierName" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SupplierID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SupplierID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SupplierName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SupplierName" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SupplierName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SupplierName" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="SupplierID" ColumnName="SupplierID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SupplierID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="SupplierID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="SupplierID" DataSetColumn="SupplierID" />
-              <Mapping SourceColumn="SupplierName" DataSetColumn="SupplierName" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -361,6 +362,20 @@ SELECT SupplierID, SupplierName FROM Suppliers WHERE (SupplierID = @SupplierID)<
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Suppliers" msprop:Generator_TableClassName="SuppliersDataTable" msprop:Generator_TableVarName="tableSuppliers" msprop:Generator_TablePropName="Suppliers" msprop:Generator_RowDeletingName="SuppliersRowDeleting" msprop:Generator_RowChangingName="SuppliersRowChanging" msprop:Generator_RowEvHandlerName="SuppliersRowChangeEventHandler" msprop:Generator_RowDeletedName="SuppliersRowDeleted" msprop:Generator_UserTableName="Suppliers" msprop:Generator_RowChangedName="SuppliersRowChanged" msprop:Generator_RowEvArgName="SuppliersRowChangeEvent" msprop:Generator_RowClassName="SuppliersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SupplierID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSupplierID" msprop:Generator_ColumnPropNameInRow="SupplierID" msprop:Generator_ColumnPropNameInTable="SupplierIDColumn" msprop:Generator_UserColumnName="SupplierID" type="xs:int" />
+              <xs:element name="SupplierName" msprop:Generator_ColumnVarNameInTable="columnSupplierName" msprop:Generator_ColumnPropNameInRow="SupplierName" msprop:Generator_ColumnPropNameInTable="SupplierNameColumn" msprop:Generator_UserColumnName="SupplierName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -425,25 +440,15 @@ SELECT SupplierID, SupplierName FROM Suppliers WHERE (SupplierID = @SupplierID)<
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Suppliers" msprop:Generator_TableClassName="SuppliersDataTable" msprop:Generator_TableVarName="tableSuppliers" msprop:Generator_TablePropName="Suppliers" msprop:Generator_RowDeletingName="SuppliersRowDeleting" msprop:Generator_RowChangingName="SuppliersRowChanging" msprop:Generator_RowEvHandlerName="SuppliersRowChangeEventHandler" msprop:Generator_RowDeletedName="SuppliersRowDeleted" msprop:Generator_UserTableName="Suppliers" msprop:Generator_RowChangedName="SuppliersRowChanged" msprop:Generator_RowEvArgName="SuppliersRowChangeEvent" msprop:Generator_RowClassName="SuppliersRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="SupplierID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSupplierID" msprop:Generator_ColumnPropNameInRow="SupplierID" msprop:Generator_ColumnPropNameInTable="SupplierIDColumn" msprop:Generator_UserColumnName="SupplierID" type="xs:int" />
-              <xs:element name="SupplierName" msprop:Generator_ColumnVarNameInTable="columnSupplierName" msprop:Generator_ColumnPropNameInRow="SupplierName" msprop:Generator_ColumnPropNameInTable="SupplierNameColumn" msprop:Generator_UserColumnName="SupplierName" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Employees" />
       <xs:field xpath="mstns:EmployeeID" />
+    </xs:unique>
+    <xs:unique name="Suppliers_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Suppliers" />
+      <xs:field xpath="mstns:SupplierID" />
     </xs:unique>
     <xs:unique name="Inventory_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Inventory" />
@@ -457,17 +462,13 @@ SELECT SupplierID, SupplierName FROM Suppliers WHERE (SupplierID = @SupplierID)<
       <xs:selector xpath=".//mstns:Orders" />
       <xs:field xpath="mstns:OrderID" />
     </xs:unique>
-    <xs:unique name="Suppliers_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Suppliers" />
-      <xs:field xpath="mstns:SupplierID" />
-    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Inventory__Suppl__267ABA7A" msdata:parent="Suppliers" msdata:child="Inventory" msdata:parentkey="SupplierID" msdata:childkey="SupplierID" msprop:Generator_UserChildTable="Inventory" msprop:Generator_ChildPropName="GetInventoryRows" msprop:Generator_UserRelationName="FK__Inventory__Suppl__267ABA7A" msprop:Generator_RelationVarName="relationFK__Inventory__Suppl__267ABA7A" msprop:Generator_UserParentTable="Suppliers" msprop:Generator_ParentPropName="SuppliersRow" />
-      <msdata:Relationship name="FK__Orderline__MenuI__2F10007B" msdata:parent="Menu" msdata:child="Orderline" msdata:parentkey="MenuID" msdata:childkey="MenuID" msprop:Generator_UserChildTable="Orderline" msprop:Generator_ChildPropName="GetOrderlineRows" msprop:Generator_UserRelationName="FK__Orderline__MenuI__2F10007B" msprop:Generator_ParentPropName="MenuRow" msprop:Generator_RelationVarName="relationFK__Orderline__MenuI__2F10007B" msprop:Generator_UserParentTable="Menu" />
-      <msdata:Relationship name="FK__Orderline__Order__2E1BDC42" msdata:parent="Orders" msdata:child="Orderline" msdata:parentkey="OrderID" msdata:childkey="OrderID" msprop:Generator_UserChildTable="Orderline" msprop:Generator_ChildPropName="GetOrderlineRows" msprop:Generator_UserRelationName="FK__Orderline__Order__2E1BDC42" msprop:Generator_RelationVarName="relationFK__Orderline__Order__2E1BDC42" msprop:Generator_UserParentTable="Orders" msprop:Generator_ParentPropName="OrdersRow" />
-      <msdata:Relationship name="FK__Orders__Employee__2B3F6F97" msdata:parent="Employees" msdata:child="Orders" msdata:parentkey="EmployeeID" msdata:childkey="EmployeeID" msprop:Generator_UserChildTable="Orders" msprop:Generator_ChildPropName="GetOrdersRows" msprop:Generator_UserRelationName="FK__Orders__Employee__2B3F6F97" msprop:Generator_ParentPropName="EmployeesRow" msprop:Generator_RelationVarName="relationFK__Orders__Employee__2B3F6F97" msprop:Generator_UserParentTable="Employees" />
+      <msdata:Relationship name="FK__Inventory__Suppl__4AB81AF0" msdata:parent="Suppliers" msdata:child="Inventory" msdata:parentkey="SupplierID" msdata:childkey="SupplierID" msprop:Generator_UserChildTable="Inventory" msprop:Generator_ChildPropName="GetInventoryRows" msprop:Generator_UserRelationName="FK__Inventory__Suppl__4AB81AF0" msprop:Generator_ParentPropName="SuppliersRow" msprop:Generator_RelationVarName="relationFK__Inventory__Suppl__4AB81AF0" msprop:Generator_UserParentTable="Suppliers" />
+      <msdata:Relationship name="FK__Orderline__MenuI__534D60F1" msdata:parent="Menu" msdata:child="Orderline" msdata:parentkey="MenuID" msdata:childkey="MenuID" msprop:Generator_UserChildTable="Orderline" msprop:Generator_ChildPropName="GetOrderlineRows" msprop:Generator_UserRelationName="FK__Orderline__MenuI__534D60F1" msprop:Generator_ParentPropName="MenuRow" msprop:Generator_RelationVarName="relationFK__Orderline__MenuI__534D60F1" msprop:Generator_UserParentTable="Menu" />
+      <msdata:Relationship name="FK__Orderline__Order__52593CB8" msdata:parent="Orders" msdata:child="Orderline" msdata:parentkey="OrderID" msdata:childkey="OrderID" msprop:Generator_UserChildTable="Orderline" msprop:Generator_ChildPropName="GetOrderlineRows" msprop:Generator_UserRelationName="FK__Orderline__Order__52593CB8" msprop:Generator_RelationVarName="relationFK__Orderline__Order__52593CB8" msprop:Generator_UserParentTable="Orders" msprop:Generator_ParentPropName="OrdersRow" />
+      <msdata:Relationship name="FK__Orders__Employee__4F7CD00D" msdata:parent="Employees" msdata:child="Orders" msdata:parentkey="EmployeeID" msdata:childkey="EmployeeID" msprop:Generator_UserChildTable="Orders" msprop:Generator_ChildPropName="GetOrdersRows" msprop:Generator_UserRelationName="FK__Orders__Employee__4F7CD00D" msprop:Generator_ParentPropName="EmployeesRow" msprop:Generator_RelationVarName="relationFK__Orders__Employee__4F7CD00D" msprop:Generator_UserParentTable="Employees" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -33,5 +33,16 @@ namespace RestaurantPOSApp.Properties {
                 return ((string)(this["RestaurantDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=GIGWAM\\SQLEXPRESS;Initial Catalog=RestaurantDB;Integrated Security=Tr" +
+            "ue")]
+        public string RestaurantDBConnectionString1 {
+            get {
+                return ((string)(this["RestaurantDBConnectionString1"]));
+            }
+        }
     }
 }
