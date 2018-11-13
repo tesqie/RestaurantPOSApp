@@ -22,5 +22,11 @@ namespace RestaurantPOSApp
             InventoryForm f = new InventoryForm();
             f.Show();
         }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InventoryForm f = new InventoryForm();
+            f.Show();
+        }
     }
 }

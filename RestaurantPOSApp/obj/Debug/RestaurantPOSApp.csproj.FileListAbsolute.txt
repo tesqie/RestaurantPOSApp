@@ -9,3 +9,4 @@ C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\Restauran
 C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.pdb
 C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Form1.resources
 C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.InventoryForm.resources
+C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Form2.resources
