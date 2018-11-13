@@ -64,5 +64,17 @@ namespace RestaurantPOSApp
             panel3.Hide();
             panel2.Show();
         }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 menuForm = new Form1();
+            menuForm.Show();
+        }
+
+        private void tableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Tables tablesform = new Tables();
+            tablesform.Show();
+        }
     }
 }
