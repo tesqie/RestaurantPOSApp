@@ -62,18 +62,78 @@ namespace RestaurantPOSApp
         private void button4_Click(object sender, EventArgs e)
         {
             panel3.Hide();
+            panel2.Show();
         }
 
-        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void label12_Click(object sender, EventArgs e)
         {
-            Form1 menuForm = new Form1();
-            menuForm.Show();
+
         }
 
-        private void tableToolStripMenuItem_Click(object sender, EventArgs e)
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            Tables tablesform = new Tables();
-            tablesform.Show();
+            int p_id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            string name = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string price = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            int qty = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
+            int supplier = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+
+            txt_productID.Text = p_id.ToString();
+            txt_product_name_o.Text = name;
+            txt_product_name_b.Text = name;
+            txt_price.Text = price;
+            txt_qtyH_o.Text = qty.ToString();
+            txt_qtyH_b.Text = qty.ToString();
+            lbl_supplierID.Text = supplier.ToString();
+            txt_supplierID.Text = supplier.ToString();
+
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            int p_id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            string name = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string price = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            int qty = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
+            int supplier = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+
+            txt_productID.Text = p_id.ToString();
+            txt_product_name_o.Text = name;
+            txt_product_name_b.Text = name;
+            txt_price.Text = price;
+            txt_qtyH_o.Text = qty.ToString();
+            txt_qtyH_b.Text = qty.ToString();
+            lbl_supplierID.Text = supplier.ToString();
+            txt_supplierID.Text = supplier.ToString();
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            DataRow[] dr = ds.Inventory.Select("ProductID = " + int.Parse(txt_productID.Text));
+            foreach (DataRow d in dr)
+            {
+                d[1] = txt_product_name_b.Text;
+                d[2] = txt_price.Text;
+                d[3] = int.Parse(txt_qtyH_b.Text);
+                d[4] = int.Parse(lbl_supplierID.Text);
+            }
+
+            st.Update(ds.Inventory);
+        }
+
+        private void btn_order_Click(object sender, EventArgs e)
+        {
+            DataRow[] dr = ds.Inventory.Select("ProductName = '" + txt_product_name_o.Text + "'");
+            foreach (DataRow d in dr)
+            {
+
+                d[3] = int.Parse(txt_qtyH_o.Text) + int.Parse(txt_qtyB_o.Text);
+                txt_qtyH_o.Text = d[3].ToString();
+
+            }
+
+            st.Update(ds.Inventory);
         }
     }
 }

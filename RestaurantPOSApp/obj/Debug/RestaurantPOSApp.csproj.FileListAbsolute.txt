@@ -9,3 +9,5 @@ C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\D
 C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.exe
 C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.pdb
 C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Tables.resources
+C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.csprojAssemblyReference.cache
+C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.InvoiceForm.resources
