@@ -9,6 +9,7 @@ C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\Restauran
 C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.pdb
 C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Form1.resources
 C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.InventoryForm.resources
+<<<<<<< HEAD
 C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\bin\Debug\RestaurantPOSApp.exe.config
 C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\bin\Debug\RestaurantPOSApp.exe
 C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\bin\Debug\RestaurantPOSApp.pdb
@@ -21,3 +22,6 @@ C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\D
 C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.csproj.CoreCompileInputs.cache
 C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.exe
 C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.pdb
+=======
+C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Form2.resources
+>>>>>>> KA02
