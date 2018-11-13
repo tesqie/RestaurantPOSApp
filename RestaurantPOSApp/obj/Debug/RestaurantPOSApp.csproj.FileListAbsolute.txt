@@ -25,3 +25,12 @@ C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\D
 =======
 C:\Users\user\source\repos\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Form2.resources
 >>>>>>> KA02
+C:\Users\tesqi\OneDrive\Documents\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.csprojAssemblyReference.cache
+C:\Users\tesqi\OneDrive\Documents\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Form2.resources
+C:\Users\tesqi\OneDrive\Documents\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.InventoryForm.resources
+C:\Users\tesqi\OneDrive\Documents\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Form1.resources
+C:\Users\tesqi\OneDrive\Documents\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Properties.Resources.resources
+C:\Users\tesqi\OneDrive\Documents\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.csproj.GenerateResource.cache
+C:\Users\tesqi\OneDrive\Documents\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.csproj.CoreCompileInputs.cache
+C:\Users\tesqi\OneDrive\Documents\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.exe
+C:\Users\tesqi\OneDrive\Documents\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.pdb
