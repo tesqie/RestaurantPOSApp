@@ -62,7 +62,6 @@ namespace RestaurantPOSApp
         private void button4_Click(object sender, EventArgs e)
         {
             panel3.Hide();
-            panel2.Show();
         }
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)

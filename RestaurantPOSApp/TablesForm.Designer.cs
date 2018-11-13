@@ -58,7 +58,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -67,11 +66,11 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -80,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -412,19 +412,9 @@
             this.panel3.Size = new System.Drawing.Size(490, 411);
             this.panel3.TabIndex = 33;
             // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::RestaurantPOSApp.Properties.Resources.logo;
-            this.pictureBox9.Location = new System.Drawing.Point(14, 39);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(223, 72);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 30;
-            this.pictureBox9.TabStop = false;
-            // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::RestaurantPOSApp.Properties.Resources.WhatsApp_Image_2018_11_13_at_5_49_36_PM;
             this.pictureBox1.Location = new System.Drawing.Point(53, 44);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
@@ -435,6 +425,7 @@
             // 
             // pictureBox8
             // 
+            this.pictureBox8.Image = global::RestaurantPOSApp.Properties.Resources.WhatsApp_Image_2018_11_13_at_5_49_36_PM;
             this.pictureBox8.Location = new System.Drawing.Point(363, 246);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox8.Name = "pictureBox8";
@@ -445,6 +436,7 @@
             // 
             // pictureBox7
             // 
+            this.pictureBox7.Image = global::RestaurantPOSApp.Properties.Resources.WhatsApp_Image_2018_11_13_at_5_49_36_PM;
             this.pictureBox7.Location = new System.Drawing.Point(261, 246);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox7.Name = "pictureBox7";
@@ -455,6 +447,7 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Image = global::RestaurantPOSApp.Properties.Resources.WhatsApp_Image_2018_11_13_at_5_49_36_PM;
             this.pictureBox6.Location = new System.Drawing.Point(158, 249);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox6.Name = "pictureBox6";
@@ -465,6 +458,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Image = global::RestaurantPOSApp.Properties.Resources.WhatsApp_Image_2018_11_13_at_5_49_36_PM;
             this.pictureBox2.Location = new System.Drawing.Point(158, 44);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
@@ -475,6 +469,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Image = global::RestaurantPOSApp.Properties.Resources.WhatsApp_Image_2018_11_13_at_5_49_36_PM;
             this.pictureBox5.Location = new System.Drawing.Point(53, 249);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox5.Name = "pictureBox5";
@@ -485,6 +480,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = global::RestaurantPOSApp.Properties.Resources.WhatsApp_Image_2018_11_13_at_5_49_36_PM;
             this.pictureBox3.Location = new System.Drawing.Point(261, 44);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
@@ -495,6 +491,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Image = global::RestaurantPOSApp.Properties.Resources.WhatsApp_Image_2018_11_13_at_5_49_36_PM;
             this.pictureBox4.Location = new System.Drawing.Point(363, 44);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
@@ -502,6 +499,17 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::RestaurantPOSApp.Properties.Resources.logo;
+            this.pictureBox9.Location = new System.Drawing.Point(14, 39);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(223, 72);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 30;
+            this.pictureBox9.TabStop = false;
             // 
             // Tables
             // 
@@ -524,7 +532,6 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -533,6 +540,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

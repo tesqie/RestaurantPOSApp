@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantPOSApp.DataSet1TableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace RestaurantPOSApp
 {
     public partial class Form1 : Form
     {
+        DataSet1 ds;
+        MenuTableAdapter mta;
         public Form1()
         {
             InitializeComponent();
+        }
+        private void Get_Data()
+        {
+
         }
 
         

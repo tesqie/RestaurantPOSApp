@@ -80,6 +80,9 @@
     <EmbeddedResource Include="InventoryForm.resx">
       <DependentUpon>InventoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceForm.resx">
+      <DependentUpon>InvoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menu-frame.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2018-11-13 at 5.49.36 PM.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

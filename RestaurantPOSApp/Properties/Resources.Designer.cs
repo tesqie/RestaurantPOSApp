@@ -79,5 +79,15 @@ namespace RestaurantPOSApp.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2018_11_13_at_5_49_36_PM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2018-11-13 at 5.49.36 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
