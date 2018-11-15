@@ -41,6 +41,7 @@ namespace RestaurantPOSApp
             form1.Show();
             Tables tables = new Tables();
             tables.Show();
+
             Get_Data();
             DataRow[] dr = ds.Menu.Select("MealType = 'Breakfast'");
 
