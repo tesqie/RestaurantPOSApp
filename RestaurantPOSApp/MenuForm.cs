@@ -37,6 +37,8 @@ namespace RestaurantPOSApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            InvoiceForm form1 = new InvoiceForm();
+            form1.Show();
             Get_Data();
             DataRow[] dr = ds.Menu.Select("MealType = 'Breakfast'");
 
