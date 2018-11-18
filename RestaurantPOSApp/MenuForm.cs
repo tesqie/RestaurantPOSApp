@@ -88,6 +88,14 @@ namespace RestaurantPOSApp
 
 
         }
+        private void removeItemFromInv(Label name)
+        {
+            foreach (ListViewItem item in listView1.Items)
+            {
+
+
+            }
+        }
         private void addItemToInv(Label name, Label price)
         {
            
@@ -152,6 +160,11 @@ namespace RestaurantPOSApp
                 items.SubItems[0]
             }
             */
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

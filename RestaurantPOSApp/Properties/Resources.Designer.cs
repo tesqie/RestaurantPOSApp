@@ -113,6 +113,16 @@ namespace RestaurantPOSApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap subtract_icon_png_28158 {
+            get {
+                object obj = ResourceManager.GetObject("subtract-icon-png-28158", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WhatsApp_Image_2018_11_13_at_5_49_36_PM {
             get {
                 object obj = ResourceManager.GetObject("WhatsApp Image 2018-11-13 at 5.49.36 PM", resourceCulture);

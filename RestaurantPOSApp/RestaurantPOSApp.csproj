@@ -141,5 +141,8 @@
   <ItemGroup>
     <None Include="Resources\imageedit_2_2478806067.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subtract-icon-png-28158.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,3 +11,16 @@ C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\D
 C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Tables.resources
 C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.csprojAssemblyReference.cache
 C:\Users\tesqi\OneDrive\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.InvoiceForm.resources
+C:\Users\Abdul\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\bin\Debug\RestaurantPOSApp.exe.config
+C:\Users\Abdul\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\bin\Debug\RestaurantPOSApp.exe
+C:\Users\Abdul\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\bin\Debug\RestaurantPOSApp.pdb
+C:\Users\Abdul\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.csprojAssemblyReference.cache
+C:\Users\Abdul\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.InventoryForm.resources
+C:\Users\Abdul\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.InvoiceForm.resources
+C:\Users\Abdul\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Form1.resources
+C:\Users\Abdul\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Properties.Resources.resources
+C:\Users\Abdul\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.Tables.resources
+C:\Users\Abdul\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.csproj.GenerateResource.cache
+C:\Users\Abdul\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.csproj.CoreCompileInputs.cache
+C:\Users\Abdul\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.exe
+C:\Users\Abdul\Documents\GitHub\RestaurantPOSApp\RestaurantPOSApp\obj\Debug\RestaurantPOSApp.pdb

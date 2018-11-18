@@ -1,0 +1,105 @@
+USE [RestaurantDB]
+GO
+/****** Object:  Table [dbo].[Employees]    Script Date: 11/18/2018 11:18:04 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Employees](
+	[EmployeeID] [int] IDENTITY(1,1) NOT NULL,
+	[EmployeeName] [varchar](50) NULL,
+	[EmployeeUserName] [varchar](50) NULL,
+	[EmployeePassword] [varchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[EmployeeID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Inventory]    Script Date: 11/18/2018 11:18:05 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Inventory](
+	[ProductID] [int] IDENTITY(1,1) NOT NULL,
+	[ProductName] [varchar](30) NULL,
+	[Price] [decimal](5, 2) NULL,
+	[OnHand] [int] NOT NULL,
+	[SupplierID] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ProductID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Menu]    Script Date: 11/18/2018 11:18:05 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Menu](
+	[MenuID] [int] IDENTITY(1,1) NOT NULL,
+	[MealType] [varchar](20) NULL,
+	[MenuName] [varchar](30) NULL,
+	[Price] [decimal](5, 2) NULL,
+	[Desc] [varchar](500) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[MenuID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Orderline]    Script Date: 11/18/2018 11:18:05 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Orderline](
+	[OrderID] [int] NOT NULL,
+	[MenuID] [int] NOT NULL,
+	[Quantity] [int] NULL,
+	[SalesPrice]  AS ([dbo].[getPrice]([MenuID],[Quantity]))
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Orders]    Script Date: 11/18/2018 11:18:05 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Orders](
+	[OrderID] [int] IDENTITY(1,1) NOT NULL,
+	[OrderDate] [date] NULL,
+	[EmployeeID] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[OrderID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Suppliers]    Script Date: 11/18/2018 11:18:05 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Suppliers](
+	[SupplierID] [int] IDENTITY(1,1) NOT NULL,
+	[SupplierName] [varchar](30) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[SupplierID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Inventory]  WITH CHECK ADD FOREIGN KEY([SupplierID])
+REFERENCES [dbo].[Suppliers] ([SupplierID])
+GO
+ALTER TABLE [dbo].[Orderline]  WITH CHECK ADD FOREIGN KEY([MenuID])
+REFERENCES [dbo].[Menu] ([MenuID])
+GO
+ALTER TABLE [dbo].[Orderline]  WITH CHECK ADD FOREIGN KEY([OrderID])
+REFERENCES [dbo].[Orders] ([OrderID])
+GO
+ALTER TABLE [dbo].[Orders]  WITH CHECK ADD FOREIGN KEY([EmployeeID])
+REFERENCES [dbo].[Employees] ([EmployeeID])
+GO
