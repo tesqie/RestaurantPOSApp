@@ -14,9 +14,11 @@ namespace RestaurantPOSApp
     public partial class InventoryForm : Form
 
     {
+        public List<string> invOrderedItems;
+
         DataSet1 ds;
 
-        
+
         InventoryTableAdapter st;
         SuppliersTableAdapter ct;
         public InventoryForm()
@@ -213,6 +215,8 @@ namespace RestaurantPOSApp
 
         private void btn_order_Click(object sender, EventArgs e)
         {
+
+
             DataRow[] dr;
             string x = txt_qtyB_o.Text.ToString();
             int value = 0;
@@ -256,6 +260,7 @@ namespace RestaurantPOSApp
                                 }
 
                                 st.Update(ds.Inventory);
+                                AddItems(txt_productID.Text, txt_product_name_o.Text, txt_qtyB_o.Text);
                             }
                             else { errorProvider1.SetError(txt_qtyB_o, "Enter a Positive Number"); }
                         }
@@ -308,6 +313,73 @@ namespace RestaurantPOSApp
             {
                 label12.Visible = false;
             }
+        }
+
+        private void AddItems(String id, String name, String qty)
+        {
+
+
+            bool taken = false;
+            foreach (ListViewItem item in listView2.Items)
+            {
+                if (item.SubItems[1].Text == name)
+                {
+                    int x = int.Parse(item.SubItems[2].Text);
+                    int y = int.Parse(txt_qtyB_o.Text);
+                    item.SubItems[2].Text = (x + y).ToString();
+                    taken = true;
+                }
+
+            }
+            if (!taken)
+            {
+                String[] items = { id, name, qty };
+                ListViewItem listItem = new ListViewItem(items);
+                listView2.Items.Add(listItem);
+            }
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listView2.Items)
+            {
+                item.Remove();
+            }
+        }
+        private void removeItemFromInv(Label name, Label price)
+        {
+            foreach (ListViewItem item in listView2.Items)
+            {
+                if (item.SubItems[1].Text == name.Text)
+                {
+                    int x = int.Parse(item.SubItems[2].Text);
+                    if (x == 1)
+                    {
+                        item.Remove();
+                    }
+                    item.SubItems[2].Text = (--x).ToString();
+
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<string> items = new List<string>();
+            List<string> qty = new List<string>();
+            invOrderedItems = new List<string>();
+            int i = 0;
+            foreach (ListViewItem item in listView2.Items)
+            {
+                items.Add(item.SubItems[1].Text);
+                qty.Add(item.SubItems[2].Text);
+                invOrderedItems.Add(items[i].ToString() + "," + qty[i].ToString());
+                i++;
+            }
+
+
+            InvoiceForm invForm = new InvoiceForm();
+            invForm.Show();
         }
     }
 }
