@@ -11,8 +11,8 @@ using System.Windows.Forms;
 
 namespace RestaurantPOSApp
 {
-    //need 2D array with item and qty
-    //String array with item id,qty
+    
+    
     
     public partial class Form1 : Form
     {
@@ -37,13 +37,32 @@ namespace RestaurantPOSApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            InvoiceForm form1 = new InvoiceForm();
-            form1.Show();
-            Tables tables = new Tables();
-            tables.Show();
 
             Get_Data();
-            DataRow[] dr = ds.Menu.Select("MealType = 'Breakfast'");
+            TimeSpan now = DateTime.Now.TimeOfDay;
+            TimeSpan startAM = new TimeSpan(24, 0, 0);
+            TimeSpan endAM = new TimeSpan(11, 0, 0);
+            TimeSpan startLunch = new TimeSpan(11, 0, 1);
+            TimeSpan endLunch = new TimeSpan(14, 0, 0);
+            TimeSpan startDinner = new TimeSpan(14, 0, 1);
+            TimeSpan endDinner = new TimeSpan(23, 59, 59);
+            DataRow[] dr = ds.Menu.Select();
+            if (now > startAM && now < endAM)
+            {
+                dr = ds.Menu.Select("MealType = 'Breakfast'");
+                label1.Text = "Breakfast Menu";
+
+            }
+            else if (now > startLunch && now < endLunch)
+            {
+                dr = ds.Menu.Select("MealType = 'Lunch'");
+                label1.Text = "Lunch Menu";
+            }
+            else if (now > startDinner && now < endDinner) 
+            {
+                dr = ds.Menu.Select("MealType = 'Dinner'");
+                label1.Text = "Dinner Menu";
+            }
 
             label2.Text = dr[0][2].ToString();
             label7.Text = dr[0][3].ToString();
@@ -88,12 +107,22 @@ namespace RestaurantPOSApp
 
 
         }
-        private void removeItemFromInv(Label name)
+        private void removeItemFromInv(Label name,Label price)
         {
             foreach (ListViewItem item in listView1.Items)
             {
-
-
+                if (item.SubItems[1].Text == name.Text)
+                {
+                    int x = int.Parse(item.SubItems[2].Text);
+                    if(x == 1)
+                    {
+                        item.Remove();
+                    }
+                    double itemPrice = double.Parse(item.SubItems[3].Text);
+                    item.SubItems[2].Text = (--x).ToString();
+                    item.SubItems[3].Text = (itemPrice - double.Parse(price.Text)).ToString();
+                    
+                }
             }
         }
         private void addItemToInv(Label name, Label price)
@@ -107,7 +136,7 @@ namespace RestaurantPOSApp
                     int x = int.Parse(item.SubItems[2].Text);
                     double itemPrice = double.Parse(item.SubItems[3].Text);
                     item.SubItems[2].Text = (++x).ToString();
-                    item.SubItems[3].Text = (itemPrice * 2).ToString();
+                    item.SubItems[3].Text = (itemPrice + double.Parse(price.Text)).ToString();
                     taken = true;
                 }
 
@@ -152,18 +181,65 @@ namespace RestaurantPOSApp
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {/*
+        {
+            Get_Data();
             DataRow[] dr = ds.Menu.Select();
-            foreach(DataRow)
-            foreach (ListViewItem items in listView1.Items)
+            
+            List<string> items = new List<string>();
+            List<string> qty = new List<string>();
+            orderedItems = new List<string>();
+            foreach(ListViewItem item in listView1.Items)
             {
-                items.SubItems[0]
+                items.Add(item.SubItems[1].Text);
+                qty.Add(item.SubItems[2].Text);
             }
-            */
+            int i = 0;
+            foreach(DataRow d in dr)
+            {
+                if (items.Contains(d[2].ToString()))
+                {
+                    orderedItems.Add(d[0].ToString() +"," +qty[i]);
+                    i++;
+                }
+            }
+            
+
         }
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
+            removeItemFromInv(label2, label7);
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            removeItemFromInv(label3, label8);
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+            removeItemFromInv(label4, label9);
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            removeItemFromInv(label5, label10);
+        }
+
+        private void pictureBox15_Click(object sender, EventArgs e)
+        {
+            removeItemFromInv(label6, label11);
+        }
+
+        private void employeeLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel6.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Tables tablesForm = new Tables();
+            tablesForm.Show();
 
         }
     }
