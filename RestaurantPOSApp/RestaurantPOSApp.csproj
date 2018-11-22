@@ -144,5 +144,20 @@
   <ItemGroup>
     <None Include="Resources\subtract-icon-png-28158.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bagel.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bagel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\steak.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meatburger.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\primerib.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

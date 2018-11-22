@@ -73,6 +73,16 @@ namespace RestaurantPOSApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bagel {
+            get {
+                object obj = ResourceManager.GetObject("bagel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_plus_24_103172 {
             get {
                 object obj = ResourceManager.GetObject("if_plus-24_103172", resourceCulture);
@@ -103,9 +113,39 @@ namespace RestaurantPOSApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap meatburger {
+            get {
+                object obj = ResourceManager.GetObject("meatburger", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu_frame {
             get {
                 object obj = ResourceManager.GetObject("menu_frame", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap primerib {
+            get {
+                object obj = ResourceManager.GetObject("primerib", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap steak {
+            get {
+                object obj = ResourceManager.GetObject("steak", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -139,4 +139,16 @@
   <data name="subtract-icon-png-28158" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\subtract-icon-png-28158.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bagel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bagel.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="meatburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\meatburger.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="primerib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\primerib.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="steak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\steak.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

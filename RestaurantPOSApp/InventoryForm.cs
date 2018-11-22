@@ -16,7 +16,7 @@ namespace RestaurantPOSApp
     {
         DataSet1 ds;
 
-
+        
         InventoryTableAdapter st;
         SuppliersTableAdapter ct;
         public InventoryForm()

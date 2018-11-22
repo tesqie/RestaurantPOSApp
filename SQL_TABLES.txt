@@ -19,22 +19,23 @@ CREATE TABLE Menu(
 	Price DEC(5, 2)
 );
 
-INSERT INTO Menu(MenuType, MenuName, Price) VALUES
-	('Breakfast', 'Bagel', 1.99),
-	('Breakfast', 'Omelette', 2.49),
-	('Breakfast', 'Toast', 0.99),
-	('Breakfast', 'French Toast', 1.99),
-	('Breakfast', 'Bacon', 2.99),
-	('Lunch', 'Burger', 4.99),
-	('Lunch', 'Chicken Burger', 4.99),
-	('Lunch', 'Veggie Burger', 5.29),
-	('Lunch', 'testlunch', 15.99),
-	('Lunch', 'testlunch2', 19.99),
-	('Dinner', 'Steak', 24.99),
-	('Dinner', 'Prime Rib', 34.99),
-	('Dinner', 'Pasta', 19.99),
-	('Dinner', 'Salad', 99.99),
-	('Dinner', 'Garlic Bread', 64.99);
+INSERT INTO Menu(MenuType, MenuName, Price,MenuDescr) VALUES
+	('Breakfast', 'Bagel', 1.99,'Enjoy a delicious bagel'),
+	('Breakfast', 'Omelette', 2.49,'Award winning straight from the chicken'),
+	('Breakfast', 'Toast', 0.99,'The yummiest toast on the planet'),
+	('Breakfast', 'French Toast', 1.99,'Shipped straight from France'),
+	('Breakfast', 'Bacon', 2.99,'No pigs were harmed in the making of this bacon'),
+	('Lunch', 'Burger', 4.99,'Meaty burger for your cravings'),
+	('Lunch', 'Chicken Burger', 4.99,'Our chicken is lab grown and no chicken was harmed'),
+	('Lunch', 'Veggie Burger', 5.29,'All kinds of delicious vegetables'),
+	('Lunch', 'Chicken Salad', 15.99,'Delicious'),
+	('Lunch', 'Shawarma', 19.99,'dsda'),
+	('Dinner', 'Steak', 24.99,'Our steak is created using quantum technology'),
+	('Dinner', 'Prime Rib', 34.99,'Best prime ribs'),
+	('Dinner', 'Pasta', 19.99,'pasta is good'),
+	('Dinner', 'Salad', 9.99,'Yummy salad'),
+	('Dinner', 'Garlic Bread', 4.99,'garlic bread');
+
 
 CREATE TABLE Suppliers(
 	SupplierID INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
