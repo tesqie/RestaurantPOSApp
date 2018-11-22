@@ -49,40 +49,40 @@ namespace RestaurantPOSApp
             DataRow[] dr = ds.Menu.Select();
             if (now > startAM && now < endAM)
             {
-                dr = ds.Menu.Select("MealType = 'Breakfast'");
+                dr = ds.Menu.Select("MenuType = 'Breakfast'");
                 label1.Text = "Breakfast Menu";
 
             }
             else if (now > startLunch && now < endLunch)
             {
-                dr = ds.Menu.Select("MealType = 'Lunch'");
+                dr = ds.Menu.Select("MenuType = 'Lunch'");
                 label1.Text = "Lunch Menu";
             }
             else if (now > startDinner && now < endDinner) 
             {
-                dr = ds.Menu.Select("MealType = 'Dinner'");
+                dr = ds.Menu.Select("MenuType = 'Dinner'");
                 label1.Text = "Dinner Menu";
             }
 
             label2.Text = dr[0][2].ToString();
-            label7.Text = dr[0][3].ToString();
-            richTextBox1.Text = dr[0][4].ToString();
+            label7.Text = dr[0][4].ToString();
+            richTextBox1.Text = dr[0][3].ToString();
 
             label3.Text = dr[1][2].ToString();
-            label8.Text = dr[1][3].ToString();
-            richTextBox2.Text = dr[1][4].ToString();
+            label8.Text = dr[1][4].ToString();
+            richTextBox2.Text = dr[1][3].ToString();
 
             label4.Text = dr[2][2].ToString();
-            label9.Text = dr[2][3].ToString();
-            richTextBox3.Text = dr[2][4].ToString();
+            label9.Text = dr[2][4].ToString();
+            richTextBox3.Text = dr[2][3].ToString();
 
             label5.Text = dr[3][2].ToString();
-            label10.Text = dr[3][3].ToString();
-            richTextBox4.Text = dr[3][4].ToString();
+            label10.Text = dr[3][4].ToString();
+            richTextBox4.Text = dr[3][3].ToString();
 
             label6.Text = dr[4][2].ToString();
-            label11.Text = dr[4][3].ToString();
-            richTextBox5.Text = dr[4][4].ToString();
+            label11.Text = dr[4][4].ToString();
+            richTextBox5.Text = dr[4][3].ToString();
 
             this.BackgroundImage = Properties.Resources.menu_frame;
 

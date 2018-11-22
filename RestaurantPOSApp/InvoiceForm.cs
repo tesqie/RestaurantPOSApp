@@ -20,10 +20,13 @@ namespace RestaurantPOSApp
         OrdersTableAdapter ot;
         OrderlineTableAdapter olt;
         SuppliersTableAdapter st;
+        PurchaseOrdersTableAdapter pot;
+        PurchaseOrderlineTableAdapter polt;
 
         int[,] itemID = new int[,] { { 1, 4 }, { 3, 2 }, { 5, 1 } };
+        bool forInv = true;
         int employeeID = 1;
-        int orderID;
+        int orderID, purchaseorderID;
         int tableID;
         double salesPrice;
 
@@ -45,6 +48,8 @@ namespace RestaurantPOSApp
             ot = new OrdersTableAdapter();
             olt = new OrderlineTableAdapter();
             st = new SuppliersTableAdapter();
+            pot = new PurchaseOrdersTableAdapter();
+            polt = new PurchaseOrderlineTableAdapter();
 
             mt.Fill(ds.Menu);
             it.Fill(ds.Inventory);
@@ -52,6 +57,8 @@ namespace RestaurantPOSApp
             ot.Fill(ds.Orders);
             olt.Fill(ds.Orderline);
             st.Fill(ds.Suppliers);
+            pot.Fill(ds.PurchaseOrders);
+            polt.Fill(ds.PurchaseOrderline);
         }
 
         private void display_order()
@@ -59,14 +66,31 @@ namespace RestaurantPOSApp
             double price = 0;
             double tax;
             DataRow[] dr = null;
-            for (int i = 0; i < (itemID.Length / itemID.Rank); i++)
+
+            if (forInv == false)
             {
-                dr = ds.Menu.Select("MenuID = " + itemID[i, 0]);
-                foreach (DataRow d in dr)
+                for (int i = 0; i < (itemID.Length / itemID.Rank); i++)
                 {
-                    richTextBox1.Text += d[1] + "\t" + d[2] + "\t" + d[3] + "\t";
-                    richTextBox1.Text += "Qty: " + itemID[i, 1] + "\n";
-                    price += double.Parse(d[3].ToString()) * double.Parse(itemID[i, 1].ToString());
+                    dr = ds.Menu.Select("MenuID = " + itemID[i, 0]);
+                    foreach (DataRow d in dr)
+                    {
+                        richTextBox1.Text += d[1] + "\t" + d[2] + "\t" + d[3] + "\t";
+                        richTextBox1.Text += "Qty: " + itemID[i, 1] + "\n";
+                        price += double.Parse(d[3].ToString()) * double.Parse(itemID[i, 1].ToString());
+                    }
+                }
+            }
+            else if (forInv == true)
+            {
+                for (int i = 0; i < (itemID.Length / itemID.Rank); i++)
+                {
+                    dr = ds.Inventory.Select("ProductID = " + itemID[i, 0]);
+                    foreach (DataRow d in dr)
+                    {
+                        richTextBox1.Text += d[1] + "\t" + d[2] + "\t" + d[3] + "\t";
+                        richTextBox1.Text += "Qty: " + itemID[i, 1] + "\n";
+                        price += double.Parse(d[3].ToString()) * double.Parse(itemID[i, 1].ToString());
+                    }
                 }
             }
 
@@ -79,27 +103,55 @@ namespace RestaurantPOSApp
 
         private void orderConfirmation_Click(object sender, EventArgs e)
         {
-            DataSet1.OrdersRow or = ds.Orders.NewOrdersRow();
-
-            or.OrderDate = DateTime.Now;
-            or.EmployeeID = this.employeeID;
-
-            ds.Orders.AddOrdersRow(or);
-            ot.Update(ds.Orders);
-
-            this.orderID = ds.Tables["Orders"].AsEnumerable().Max(x => x.Field<int>("OrderID"));
-
-            DataSet1.OrderlineRow olr = null;
-
-            for (int i = 0; i < (itemID.Length / itemID.Rank); i++)
+            if (forInv == false)
             {
-                olr = ds.Orderline.NewOrderlineRow();
-                olr.OrderID = this.orderID;
-                olr.MenuID = itemID[i, 0];
-                olr.Quantity = itemID[i, 1];
+                DataSet1.OrdersRow or = ds.Orders.NewOrdersRow();
 
-                ds.Orderline.AddOrderlineRow(olr);
-                olt.Update(ds.Orderline);
+                or.OrderDate = DateTime.Now;
+                or.EmployeeID = this.employeeID;
+
+                ds.Orders.AddOrdersRow(or);
+                ot.Update(ds.Orders);
+
+                this.orderID = ds.Tables["Orders"].AsEnumerable().Max(x => x.Field<int>("OrderID"));
+
+                DataSet1.OrderlineRow olr = null;
+
+                for (int i = 0; i < (itemID.Length / itemID.Rank); i++)
+                {
+                    olr = ds.Orderline.NewOrderlineRow();
+                    olr.OrderID = this.orderID;
+                    olr.MenuID = itemID[i, 0];
+                    olr.Quantity = itemID[i, 1];
+
+                    ds.Orderline.AddOrderlineRow(olr);
+                    olt.Update(ds.Orderline);
+                }
+            }
+            else if (forInv == true)
+            {
+                DataSet1.PurchaseOrdersRow por = ds.PurchaseOrders.NewPurchaseOrdersRow();
+
+                por.PurchaseOrderDate = DateTime.Now;
+                por.EmployeeID = this.employeeID;
+
+                ds.PurchaseOrders.AddPurchaseOrdersRow(por);
+                pot.Update(ds.PurchaseOrders);
+
+                this.purchaseorderID = ds.Tables["PurchaseOrders"].AsEnumerable().Max(x => x.Field<int>("PurchaseOrderID"));
+
+                DataSet1.PurchaseOrderlineRow polr = null;
+
+                for (int i = 0; i < (itemID.Length / itemID.Rank); i++)
+                {
+                    polr = ds.PurchaseOrderline.NewPurchaseOrderlineRow();
+                    polr.PurchaseOrderID = this.purchaseorderID;
+                    polr.ProductID = itemID[i, 0];
+                    polr.Quantity = itemID[i, 1];
+
+                    ds.PurchaseOrderline.AddPurchaseOrderlineRow(polr);
+                    polt.Update(ds.PurchaseOrderline);
+                }
             }
         }
     }
