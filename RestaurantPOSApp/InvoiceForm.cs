@@ -23,8 +23,10 @@ namespace RestaurantPOSApp
         PurchaseOrdersTableAdapter pot;
         PurchaseOrderlineTableAdapter polt;
 
-        int[,] itemID = new int[,] { { 1, 4 }, { 3, 2 }, { 5, 1 } };
-        bool forInv = true;
+        int[,] itemID;
+
+
+        bool forInv = false;
         int employeeID = 1;
         int orderID, purchaseorderID;
         int tableID;
@@ -34,8 +36,21 @@ namespace RestaurantPOSApp
         {
             InitializeComponent();
             get_data();
-            //this.itemID = arr;
-            //this.employeeID = employeeID;
+            
+            itemID = new int[Form1.orderedItems.Count, 2];
+
+            int id, qt;
+            for (int i = 0; i < Form1.orderedItems.Count(); i++)
+            {
+                string product = Form1.orderedItems[i];
+                string[] temp = product.Split(',');
+                id = int.Parse(temp[0]);
+                qt = int.Parse(temp[1]);
+
+                itemID[i, 0] = id;
+                itemID[i, 1] = qt;
+            }
+
             display_order();
         }
 
@@ -76,7 +91,7 @@ namespace RestaurantPOSApp
                     {
                         richTextBox1.Text += d[1] + "\t" + d[2] + "\t" + d[3] + "\t";
                         richTextBox1.Text += "Qty: " + itemID[i, 1] + "\n";
-                        price += double.Parse(d[3].ToString()) * double.Parse(itemID[i, 1].ToString());
+                        //price += double.Parse(d[3].ToString()) * double.Parse(itemID[i, 1].ToString());
                     }
                 }
             }

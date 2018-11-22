@@ -14,7 +14,7 @@ namespace RestaurantPOSApp
     
     public partial class Form1 : Form
     {
-        public List<string> orderedItems;
+        public static List<string> orderedItems;
         int listno = 1;
         DataSet1 ds;
         MenuTableAdapter mta;
