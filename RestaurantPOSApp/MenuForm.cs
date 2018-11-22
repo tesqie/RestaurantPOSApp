@@ -202,6 +202,8 @@ namespace RestaurantPOSApp
                     i++;
                 }
             }
+            InvoiceForm invForm = new InvoiceForm();
+            invForm.Show();
             
 
         }
@@ -238,9 +240,21 @@ namespace RestaurantPOSApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Tables tablesForm = new Tables();
-            tablesForm.Show();
-
+            Get_Data();
+            DataRow[] dr = ds.Employees.Select();
+            foreach(DataRow d in dr)
+            {
+                if(d[2].ToString() == textBox4.Text && d[3].ToString() == textBox5.Text)
+                {
+                    Tables tablesForm = new Tables();
+                    tablesForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username/Password combination");
+                }
+            }
+            
         }
     }
 }
