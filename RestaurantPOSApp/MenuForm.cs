@@ -50,19 +50,34 @@ namespace RestaurantPOSApp
                 dr = ds.Menu.Select("MenuType = 'Breakfast'");
                 label1.Text = "Breakfast Menu";
                 pictureBox1.Image = Properties.Resources.bagel;
+                pictureBox6.Image = Properties.Resources.omelette;
+                pictureBox2.Image = Properties.Resources.toast;
+                pictureBox3.Image = Properties.Resources.frenchtoast;
+                pictureBox4.Image = Properties.Resources.bacon;
 
             }
             else if (now > startLunch && now < endLunch)
             {
                 dr = ds.Menu.Select("MenuType = 'Lunch'");
                 label1.Text = "Lunch Menu";
-                
+                pictureBox1.Image = Properties.Resources.meatburger;
+                pictureBox6.Image = Properties.Resources.chickenburger;
+                pictureBox2.Image = Properties.Resources.veggieburger;
+                pictureBox3.Image = Properties.Resources.chickensalad;
+                pictureBox4.Image = Properties.Resources.shawarma;
+
             }
             else if (now > startDinner && now < endDinner) 
             {
                 dr = ds.Menu.Select("MenuType = 'Dinner'");
                 label1.Text = "Dinner Menu";
                 pictureBox1.Image = Properties.Resources.steak;
+                pictureBox6.Image = Properties.Resources.primerib;
+                pictureBox2.Image = Properties.Resources.pasta;
+                pictureBox3.Image = Properties.Resources.salad;
+                pictureBox4.Image = Properties.Resources.garlicbread;
+
+
             }
 
             label2.Text = dr[0][2].ToString();
@@ -199,7 +214,7 @@ namespace RestaurantPOSApp
             }
             InvoiceForm invForm = new InvoiceForm();
             invForm.Show();
-            
+            this.Visible = false;            
 
         }
 

@@ -67,7 +67,6 @@ namespace RestaurantPOSApp
             errorProvider1.Clear();
             panel3.Hide();
             panel2.Show();
-
         }
 
         private void label12_Click(object sender, EventArgs e)
