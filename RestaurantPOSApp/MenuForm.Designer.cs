@@ -56,6 +56,7 @@
             this.richTextBox5 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView1 = new System.Windows.Forms.ListView();
             this.No = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Item = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -79,12 +80,12 @@
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.employeeLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -126,7 +127,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(46, 92);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(537, 74);
             this.panel1.TabIndex = 3;
@@ -297,7 +298,7 @@
             // 
             this.pictureBox3.Image = global::RestaurantPOSApp.Properties.Resources.logo;
             this.pictureBox3.Location = new System.Drawing.Point(3, 2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(122, 68);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -392,6 +393,14 @@
             this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(99, 29);
             this.inventoryToolStripMenuItem.Text = "Inventory";
             this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click_2);
+            // 
+            // employeeLoginToolStripMenuItem
+            // 
+            this.employeeLoginToolStripMenuItem.Name = "employeeLoginToolStripMenuItem";
+            this.employeeLoginToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.employeeLoginToolStripMenuItem.Size = new System.Drawing.Size(151, 29);
+            this.employeeLoginToolStripMenuItem.Text = "Employee Login";
+            this.employeeLoginToolStripMenuItem.Click += new System.EventHandler(this.employeeLoginToolStripMenuItem_Click);
             // 
             // listView1
             // 
@@ -606,6 +615,7 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.button3);
             this.panel6.Controls.Add(this.button2);
             this.panel6.Controls.Add(this.textBox5);
             this.panel6.Controls.Add(this.textBox4);
@@ -617,14 +627,29 @@
             this.panel6.TabIndex = 30;
             this.panel6.Visible = false;
             // 
-            // label15
+            // button2
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(8, 22);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(87, 20);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Username:";
+            this.button2.Location = new System.Drawing.Point(14, 119);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 36);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Login";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(118, 69);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 26);
+            this.textBox5.TabIndex = 3;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(118, 21);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 26);
+            this.textBox4.TabIndex = 2;
             // 
             // label16
             // 
@@ -635,37 +660,23 @@
             this.label16.TabIndex = 1;
             this.label16.Text = "Password:";
             // 
-            // textBox4
+            // label15
             // 
-            this.textBox4.Location = new System.Drawing.Point(118, 21);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 26);
-            this.textBox4.TabIndex = 2;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(8, 22);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(87, 20);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Username:";
             // 
-            // textBox5
+            // button3
             // 
-            this.textBox5.Location = new System.Drawing.Point(118, 69);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 26);
-            this.textBox5.TabIndex = 3;
-            // 
-            // employeeLoginToolStripMenuItem
-            // 
-            this.employeeLoginToolStripMenuItem.Name = "employeeLoginToolStripMenuItem";
-            this.employeeLoginToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.employeeLoginToolStripMenuItem.Size = new System.Drawing.Size(151, 29);
-            this.employeeLoginToolStripMenuItem.Text = "Employee Login";
-            this.employeeLoginToolStripMenuItem.Click += new System.EventHandler(this.employeeLoginToolStripMenuItem_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(14, 119);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 36);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Login";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button3.Location = new System.Drawing.Point(118, 119);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(85, 36);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Sign Up";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -698,7 +709,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -794,6 +805,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ToolStripMenuItem employeeLoginToolStripMenuItem;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 
