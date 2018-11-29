@@ -19,7 +19,7 @@ namespace RestaurantPOSApp
         DataSet1 ds;
         MenuTableAdapter mta;
         EmployeesTableAdapter eta;
-        public string employeeId = null;
+        public static string employeeId = null;
         public Form1()
         {
             InitializeComponent();
@@ -269,14 +269,12 @@ namespace RestaurantPOSApp
                 if(d[2].ToString() == textBox4.Text && d[3].ToString() == textBox5.Text)
                 {
                     employeeId = d[0].ToString();
-                    Tables tablesForm = new Tables();
+                    Tables tablesForm = new Tables();   
                     tablesForm.Show();
+                    return;
                 }
-                else
-                {
-                    MessageBox.Show("Invalid Username/Password combination");
-                }
-            }  
+            }
+            MessageBox.Show("Invalid Username/Password combination");
         }
 
         private void button3_Click(object sender, EventArgs e)
