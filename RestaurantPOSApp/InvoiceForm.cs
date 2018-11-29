@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace RestaurantPOSApp
 
 
         bool forInv = false;
-        int employeeID = 1;
+        int employeeID = 1;//int.Parse(Form1.employeeId);
         int orderID, purchaseorderID;
         int tableID;
         double salesPrice;
@@ -35,11 +36,27 @@ namespace RestaurantPOSApp
         public InvoiceForm()
         {
             InitializeComponent();
-            get_data();
-            
-            itemID = new int[Form1.orderedItems.Count, 2];
 
+        }
+
+        private void InvoiceForm_Load(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Properties.Resources.menu_frame;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+
+            get_data();
+            string name = null;
+
+            DataRow[] dr = ds.Employees.Select("EmployeeID = " + this.employeeID);
+            foreach (DataRow d in dr)
+            {
+                name = d[1].ToString();
+            }
+            employeeLabel.Text = "Order Placed by: " + name;
+
+            itemID = new int[Form1.orderedItems.Count, 2];
             int id, qt;
+
             for (int i = 0; i < Form1.orderedItems.Count(); i++)
             {
                 string product = Form1.orderedItems[i];
@@ -81,6 +98,7 @@ namespace RestaurantPOSApp
             double price = 0;
             double tax;
             DataRow[] dr = null;
+            string texttofile = null;
 
             if (forInv == false)
             {
@@ -89,9 +107,11 @@ namespace RestaurantPOSApp
                     dr = ds.Menu.Select("MenuID = " + itemID[i, 0]);
                     foreach (DataRow d in dr)
                     {
-                        richTextBox1.Text += d[1] + "\t" + d[2] + "\t" + d[3] + "\t";
-                        richTextBox1.Text += "Qty: " + itemID[i, 1] + "\n";
-                        //price += double.Parse(d[3].ToString()) * double.Parse(itemID[i, 1].ToString());
+                        String[] row = { (i + 1).ToString(), d[2].ToString(), itemID[i, 1].ToString(), d[4].ToString() };
+                        ListViewItem lvi = new ListViewItem(row);
+                        listView1.Items.Add(lvi);
+                        price += double.Parse(d[4].ToString()) * double.Parse(itemID[i, 1].ToString());
+                        texttofile += row;
                     }
                 }
             }
@@ -102,9 +122,10 @@ namespace RestaurantPOSApp
                     dr = ds.Inventory.Select("ProductID = " + itemID[i, 0]);
                     foreach (DataRow d in dr)
                     {
-                        richTextBox1.Text += d[1] + "\t" + d[2] + "\t" + d[3] + "\t";
-                        richTextBox1.Text += "Qty: " + itemID[i, 1] + "\n";
-                        price += double.Parse(d[3].ToString()) * double.Parse(itemID[i, 1].ToString());
+                        String[] row = { (i + 1).ToString(), d[1].ToString(), itemID[i, 1].ToString(), d[2].ToString() };
+                        ListViewItem lvi = new ListViewItem(row);
+                        listView1.Items.Add(lvi);
+                        price += double.Parse(d[2].ToString()) * double.Parse(itemID[i, 1].ToString());
                     }
                 }
             }
@@ -114,7 +135,10 @@ namespace RestaurantPOSApp
             textBoxTax.Text = tax.ToString();
             salesPrice = price + tax;
             textBoxTotal.Text = salesPrice.ToString();
+            //File.WriteAllText("invoice.txt", texttofile);
         }
+
+
 
         private void orderConfirmation_Click(object sender, EventArgs e)
         {

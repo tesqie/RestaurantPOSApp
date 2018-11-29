@@ -37,8 +37,13 @@
             this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.No = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Item = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Qty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.employeeLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
@@ -121,15 +126,6 @@
             this.backToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
             this.backToolStripMenuItem.Text = "Back";
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 56);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(521, 301);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
-            // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = global::RestaurantPOSApp.Properties.Resources.logo;
@@ -140,13 +136,52 @@
             this.pictureBoxLogo.TabIndex = 8;
             this.pictureBoxLogo.TabStop = false;
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.No,
+            this.Item,
+            this.Qty,
+            this.Price});
+            this.listView1.Location = new System.Drawing.Point(22, 56);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(480, 295);
+            this.listView1.TabIndex = 9;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // No
+            // 
+            this.No.Text = "No";
+            // 
+            // Item
+            // 
+            this.Item.Text = "Item";
+            // 
+            // Qty
+            // 
+            this.Qty.Text = "Qty";
+            // 
+            // Price
+            // 
+            this.Price.Text = "Price";
+            // 
+            // employeeLabel
+            // 
+            this.employeeLabel.AutoSize = true;
+            this.employeeLabel.Location = new System.Drawing.Point(22, 369);
+            this.employeeLabel.Name = "employeeLabel";
+            this.employeeLabel.Size = new System.Drawing.Size(46, 17);
+            this.employeeLabel.TabIndex = 10;
+            this.employeeLabel.Text = "label1";
+            // 
             // InvoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RestaurantPOSApp.Properties.Resources.menu_frame;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.employeeLabel);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.textBoxTotal);
             this.Controls.Add(this.textBoxTax);
@@ -159,6 +194,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "InvoiceForm";
             this.Text = "Invoice Form";
+            this.Load += new System.EventHandler(this.InvoiceForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
@@ -179,7 +215,12 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader No;
+        private System.Windows.Forms.ColumnHeader Item;
+        private System.Windows.Forms.ColumnHeader Qty;
+        private System.Windows.Forms.ColumnHeader Price;
+        private System.Windows.Forms.Label employeeLabel;
     }
 }
 
