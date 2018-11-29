@@ -18,7 +18,8 @@ namespace RestaurantPOSApp
         int listno = 1;
         DataSet1 ds;
         MenuTableAdapter mta;
-        public string employeeId;
+        EmployeesTableAdapter eta;
+        public string employeeId = null;
         public Form1()
         {
             InitializeComponent();
@@ -27,8 +28,10 @@ namespace RestaurantPOSApp
         {
             ds = new DataSet1();
             mta = new MenuTableAdapter();
+            eta = new EmployeesTableAdapter();
 
             mta.Fill(ds.Menu);
+            eta.Fill(ds.Employees);
 
         }
 
@@ -258,6 +261,7 @@ namespace RestaurantPOSApp
 
         private void button2_Click(object sender, EventArgs e)
         {
+           
             Get_Data();
             DataRow[] dr = ds.Employees.Select();
             foreach(DataRow d in dr)
