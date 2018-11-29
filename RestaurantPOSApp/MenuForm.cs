@@ -36,10 +36,16 @@ namespace RestaurantPOSApp
         }
 
         
-
+        /*  Different menu is shown depending on thr time of day
+         * There is 3 menu types, Breakfast, lunch and dinner
+         * 
+         * 
+         * 
+         */
         private void Form1_Load(object sender, EventArgs e)
         {
             Get_Data();
+           
             TimeSpan now = DateTime.Now.TimeOfDay;
             TimeSpan startAM = new TimeSpan(24, 0, 0);
             TimeSpan endAM = new TimeSpan(11, 0, 0);
@@ -82,7 +88,7 @@ namespace RestaurantPOSApp
 
 
             }
-
+            //Assigning menu item names from the DB
             label2.Text = dr[0][2].ToString();
             label7.Text = dr[0][4].ToString();
             richTextBox1.Text = dr[0][3].ToString();
@@ -102,24 +108,21 @@ namespace RestaurantPOSApp
             label6.Text = dr[4][2].ToString();
             label11.Text = dr[4][4].ToString();
             richTextBox5.Text = dr[4][3].ToString();
+
+            //Setting the background of the form
             this.BackgroundImage = Properties.Resources.menu_frame;
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
         }
-
-       
-
-        private void inventoryToolStripMenuItem_Click_2(object sender, EventArgs e)
-        {
-            InventoryForm f = new InventoryForm();
-            f.Show();
-
-        }
+        
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             addItemToInv(label2, label7);
         }
+
+        //Method to remove a certain item from the ListView, 1 Click is 1 qty
+        //If qty is 1 then it will be removed
         private void removeItemFromInv(Label name,Label price)
         {
             foreach (ListViewItem item in listView1.Items)
@@ -195,9 +198,13 @@ namespace RestaurantPOSApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(employeeId == null)
+            {
+                MessageBox.Show("Please have an employee login first");
+                return;
+            }
             Get_Data();
             DataRow[] dr = ds.Menu.Select();
-            
             List<string> items = new List<string>();
             List<string> qty = new List<string>();
             orderedItems = new List<string>();
@@ -260,8 +267,7 @@ namespace RestaurantPOSApp
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-           
+        {        
             Get_Data();
             DataRow[] dr = ds.Employees.Select();
             foreach(DataRow d in dr)
