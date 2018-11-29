@@ -30,7 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,10 +48,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -67,6 +63,9 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,13 +85,13 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inventoryToolStripMenuItem,
-            this.menuToolStripMenuItem});
+            this.inventoryToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // inventoryToolStripMenuItem
             // 
@@ -100,13 +99,6 @@
             this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.inventoryToolStripMenuItem.Text = "Inventory";
             this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
-            // 
-            // menuToolStripMenuItem
-            // 
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
-            this.menuToolStripMenuItem.Text = "Menu";
-            this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -190,6 +182,7 @@
             this.button1.Text = "Make Available";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
             // 
             // button2
@@ -291,13 +284,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 26;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(14, 147);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 27;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label10
             // 
@@ -308,24 +295,6 @@
             this.label10.TabIndex = 28;
             this.label10.Text = "Name";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 118);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 17);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "Start TIme";
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(14, 207);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 30);
-            this.button9.TabIndex = 31;
-            this.button9.Text = "Log Out";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
@@ -335,9 +304,9 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(12, 95);
+            this.panel1.Location = new System.Drawing.Point(0, 95);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(759, 351);
+            this.panel1.Size = new System.Drawing.Size(771, 343);
             this.panel1.TabIndex = 32;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -359,19 +328,20 @@
             this.label12.TabIndex = 25;
             this.label12.Text = "Table";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Controls.Add(this.button9);
+            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Location = new System.Drawing.Point(19, 12);
+            this.panel2.Location = new System.Drawing.Point(10, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 332);
+            this.panel2.Size = new System.Drawing.Size(209, 324);
             this.panel2.TabIndex = 32;
             // 
             // panel3
@@ -505,6 +475,32 @@
             this.pictureBox9.TabIndex = 30;
             this.pictureBox9.TabStop = false;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(14, 119);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(106, 17);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "TIme Logged In";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(17, 159);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 30;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(17, 216);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 36);
+            this.button9.TabIndex = 31;
+            this.button9.Text = "Log Out";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Tables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -544,7 +540,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -571,15 +566,15 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button9;
     }
 }

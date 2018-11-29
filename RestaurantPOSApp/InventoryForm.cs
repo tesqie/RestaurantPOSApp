@@ -18,7 +18,7 @@ namespace RestaurantPOSApp
 
         DataSet1 ds;
 
-
+        EmployeesTableAdapter et;
         InventoryTableAdapter st;
         SuppliersTableAdapter ct;
         public InventoryForm()
@@ -36,13 +36,33 @@ namespace RestaurantPOSApp
             ct = new SuppliersTableAdapter();
             ct.Fill(ds.Suppliers);
 
+            et = new EmployeesTableAdapter();
+            et.Fill(ds.Employees);
+
         }
 
         private void InventoryForm_Load(object sender, EventArgs e)
         {
             this.BackgroundImage = Properties.Resources.menu_frame;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
             get_data();
             dataGridView1.DataSource = ds.Inventory;
+
+            DataRow[] dr = ds.Employees.Select("EmployeeID = " + int.Parse(Form1.employeeId));
+            foreach (DataRow d in dr)
+            {
+                label13.Text = label13.Text + d[1].ToString() + " ?";
+            }
+
+            DateTime date = new DateTime();
+            date = System.DateTime.Now;
+            label15.Text = date.ToShortDateString();
+            label18.Text = date.ToShortTimeString();
+
+
+
+
+
             panel3.Hide();
         }
 
@@ -368,17 +388,46 @@ namespace RestaurantPOSApp
             List<string> qty = new List<string>();
             invOrderedItems = new List<string>();
             int i = 0;
-            foreach (ListViewItem item in listView2.Items)
+            if (listView2.Items.Count == 0)
             {
-                items.Add(item.SubItems[1].Text);
-                qty.Add(item.SubItems[2].Text);
-                invOrderedItems.Add(items[i].ToString() + "," + qty[i].ToString());
-                i++;
+                listView2.Text = "Empty List, Please Select an Item to order";
             }
+            else
+            {
+                listView2.Text = "Esdsdsdsds";
+                foreach (ListViewItem item in listView2.Items)
+                {
+                    items.Add(item.SubItems[1].Text);
+                    qty.Add(item.SubItems[2].Text);
+                    invOrderedItems.Add(items[i].ToString() + "," + qty[i].ToString());
+                    i++;
+                }
 
 
-            InvoiceForm invForm = new InvoiceForm();
+                InvoiceForm invForm = new InvoiceForm();
+                invForm.Show();
+            }
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            Form1 invForm = new Form1();
             invForm.Show();
+            this.Hide();
+
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            Form1 invForm = new Form1();
+            invForm.Show();
+            this.Hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
