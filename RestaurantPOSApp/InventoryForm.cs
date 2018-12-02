@@ -16,16 +16,18 @@ namespace RestaurantPOSApp
     {
         public List<string> invOrderedItems;
 
+        // Create Dataset and Table Adapters
         DataSet1 ds;
-
         EmployeesTableAdapter et;
         InventoryTableAdapter st;
         SuppliersTableAdapter ct;
+
         public InventoryForm()
         {
             InitializeComponent();
         }
 
+        //connection to the database
         private void get_data()
         {
             ds = new DataSet1();
@@ -43,8 +45,11 @@ namespace RestaurantPOSApp
 
         private void InventoryForm_Load(object sender, EventArgs e)
         {
+            //setting Background picture
             this.BackgroundImage = Properties.Resources.menu_frame;
             this.BackgroundImageLayout = ImageLayout.Stretch;
+
+            // get the username from inventory table
             get_data();
             dataGridView1.DataSource = ds.Inventory;
 
@@ -54,13 +59,11 @@ namespace RestaurantPOSApp
                 label13.Text = label13.Text + d[1].ToString() + " ?";
             }
 
+            // Create time and date for now
             DateTime date = new DateTime();
             date = System.DateTime.Now;
             label15.Text = date.ToShortDateString();
             label18.Text = date.ToShortTimeString();
-
-
-
 
 
             panel3.Hide();
@@ -76,12 +79,14 @@ namespace RestaurantPOSApp
 
         }
 
+        //Bring up the Edit Inventory tab -Edit button
         private void button3_Click(object sender, EventArgs e)
         {
             panel3.Show();
             errorProvider1.Clear();
         }
 
+        //Bring up the Order Inventory tab  -Order button
         private void button4_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
@@ -94,6 +99,7 @@ namespace RestaurantPOSApp
 
         }
 
+        // Fill in information once clicked on datagridview - Row click
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int p_id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
@@ -122,6 +128,7 @@ namespace RestaurantPOSApp
 
         }
 
+        // Fill in information once clicked on datagridview - Cell click
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 
@@ -150,8 +157,10 @@ namespace RestaurantPOSApp
             }
         }
 
+        //Update the database
         private void btn_update_Click(object sender, EventArgs e)
         {
+            //varaibales to test if int or string
             DataRow[] dr;
             string x = txt_productID.Text.ToString();
             string y = txt_price.Text.ToString();
@@ -159,12 +168,13 @@ namespace RestaurantPOSApp
             int value = 0;
             double value2 = 0;
 
+            // Validate Product ID
             if (txt_productID.Text == "" || txt_productID == null)
             {
                 errorProvider1.SetError(txt_productID, "Enter a product ID");
             }
             else
-            {
+            {// Validate Item in list or not
                 List<String> list = new List<String>();
                 dr = ds.Inventory.Select();
                 foreach (DataRow d in dr)
@@ -178,25 +188,29 @@ namespace RestaurantPOSApp
                 else
                 {
 
-
+                    // Validate if Price is int or string
                     if (int.TryParse(x, out value))
                     {
+                        // Validate if Price is NULL
                         if (txt_price.Text == "" || txt_price == null)
                         {
                             errorProvider1.SetError(txt_price, "Enter a price");
                         }
                         else
                         {
+                            // Validate if Qty is int or String
                             if (double.TryParse(y, out value2))
                             {
                                 if (double.Parse(y) > 0)
                                 {
+                                    // Validate if Qty is NULL
                                     if (txt_qtyH_b.Text == "" || txt_qtyH_b == null)
                                     {
                                         errorProvider1.SetError(txt_qtyH_b, "Enter a Qty");
                                     }
                                     else
                                     {
+                                        // Validate if Product ID is int or String
                                         if (int.TryParse(z, out value))
                                         {
                                             if (int.Parse(z) > 0)
@@ -234,23 +248,24 @@ namespace RestaurantPOSApp
 
         private void btn_order_Click(object sender, EventArgs e)
         {
-
-
+            // Variable to test of QTY is int or String
             DataRow[] dr;
             string x = txt_qtyB_o.Text.ToString();
             int value = 0;
 
+            // Validate if Product Name is NULL
             if (txt_product_name_o.Text == "" || txt_product_name_o == null)
             {
                 errorProvider1.SetError(txt_product_name_o, "Enter an Item");
             }
             else
             {
-
+                // Validate if Qty is NULL
                 if (txt_qtyB_o.Text == "" || txt_qtyB_o == null)
                     errorProvider1.SetError(txt_qtyB_o, "Enter a Qty");
                 else
                 {
+                    // Validate if inventory is in the list
                     List<String> list = new List<String>();
                     dr = ds.Inventory.Select();
                     foreach (DataRow d in dr)
@@ -263,7 +278,7 @@ namespace RestaurantPOSApp
                     }
                     else
                     {
-
+                        // Validate if Qty is int or String 
                         if (int.TryParse(x, out value))
                         {
                             if (int.Parse(x) > 0)
@@ -322,6 +337,7 @@ namespace RestaurantPOSApp
             errorProvider1.Clear();
         }
 
+        // Check if Qty entered is greater than threshold
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (int.Parse(txt_qtyH_b.Text) <= 10)
@@ -334,6 +350,7 @@ namespace RestaurantPOSApp
             }
         }
 
+        // Add Items to the list that will be passed to invoice form
         private void AddItems(String id, String name, String qty)
         {
 
@@ -358,6 +375,7 @@ namespace RestaurantPOSApp
             }
         }
 
+        // Remove all Items from the list in the listbox
         private void pictureBox14_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem item in listView2.Items)
@@ -365,6 +383,8 @@ namespace RestaurantPOSApp
                 item.Remove();
             }
         }
+
+        // Remove items from inventory list
         private void removeItemFromInv(Label name, Label price)
         {
             foreach (ListViewItem item in listView2.Items)
@@ -382,6 +402,7 @@ namespace RestaurantPOSApp
             }
         }
 
+        // Add items selected and their qtys to two arrays
         private void button1_Click(object sender, EventArgs e)
         {
             List<string> items = new List<string>();
@@ -394,7 +415,7 @@ namespace RestaurantPOSApp
             }
             else
             {
-                listView2.Text = "Esdsdsdsds";
+                listView2.Text = "";
                 foreach (ListViewItem item in listView2.Items)
                 {
                     items.Add(item.SubItems[1].Text);
@@ -409,15 +430,15 @@ namespace RestaurantPOSApp
             }
         }
 
+        // Go to the menuform
         private void label14_Click(object sender, EventArgs e)
         {
             Form1 invForm = new Form1();
             invForm.Show();
             this.Hide();
-
-
         }
 
+        // Go to the menuform
         private void label13_Click(object sender, EventArgs e)
         {
             Form1 invForm = new Form1();
