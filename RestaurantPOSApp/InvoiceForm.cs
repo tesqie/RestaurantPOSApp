@@ -1,13 +1,7 @@
 ﻿using RestaurantPOSApp.DataSet1TableAdapters;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RestaurantPOSApp
@@ -28,6 +22,8 @@ namespace RestaurantPOSApp
         SuppliersTableAdapter st;
         PurchaseOrdersTableAdapter pot;
         PurchaseOrderlineTableAdapter polt;
+        Form1 menuForm;
+        InventoryForm invinForm;
 
         // itemID is a 2-dimensional array meant to store the IDs and quantities of the items that are to be ordered.
         int[,] itemID;
@@ -50,11 +46,18 @@ namespace RestaurantPOSApp
          * InvoiceForm 1 argument constructor
          * Assigns the global variable forInv.
          */
-        public InvoiceForm(bool fromInv)
+        public InvoiceForm(bool fromInv, InventoryForm invForm)
         {
-            InitializeComponent();
+            invinForm = invForm;
             this.forInv = fromInv;
+            InitializeComponent();
+            
 
+        }
+        public InvoiceForm(Form1 form1)
+        {
+            menuForm = form1;
+            InitializeComponent();
         }
 
         /*
@@ -215,12 +218,15 @@ namespace RestaurantPOSApp
             // Returns to InventoryForm
             if (forInv)
             {
+                invinForm.Show();
+                this.Close();
 
             }
             // Returns to MenuForm
             else
             {
-
+                menuForm.Visible = true;
+                this.Close();
             }
         }
 

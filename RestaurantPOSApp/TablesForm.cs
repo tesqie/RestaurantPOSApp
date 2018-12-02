@@ -1,34 +1,39 @@
 ﻿using RestaurantPOSApp.DataSet1TableAdapters;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RestaurantPOSApp
 {
     public partial class Tables : Form
 
-    {
+    {   //setting up the dataset and tableadapter 
         DataSet1 ds;
         EmployeesTableAdapter et;
+        Form1 menuForm;
+
+        //setting a method to get the data from the table
         private void Get_Data()
         {
             ds = new DataSet1();
             et = new EmployeesTableAdapter();
             et.Fill(ds.Employees);
         }
+        // creating a list array to store table info
         public static List<int> TableAvailable = new List<int>
         {
         };
         public Tables()
         {
             InitializeComponent();
+        }
+        public Tables(Form1 form1)
+        {
+            menuForm = form1;
+            InitializeComponent();
+
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -37,19 +42,19 @@ namespace RestaurantPOSApp
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //MenuForm menu1 = new MenuForm(); 
-            //menu1.Show();
         }
-
+        //creating a menustrip to allowing this page to connect to inventory
         private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InventoryForm inventory1 = new InventoryForm();
+            this.Visible = false;
+            InventoryForm inventory1 = new InventoryForm(this,menuForm);
             inventory1.Show();
+            
         }
 
 
 
-
+        //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (button1.BackColor == Color.LightGreen)
@@ -59,7 +64,7 @@ namespace RestaurantPOSApp
                 invoice1.Show();
             }
         }
-
+        //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (button2.BackColor == Color.LightGreen)
@@ -69,7 +74,7 @@ namespace RestaurantPOSApp
                 invoice1.Show();
             }
         }
-
+        //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             if (button3.BackColor == Color.LightGreen)
@@ -79,7 +84,7 @@ namespace RestaurantPOSApp
                 invoice1.Show();
             }
         }
-
+        //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             if (button4.BackColor == Color.LightGreen)
@@ -89,7 +94,7 @@ namespace RestaurantPOSApp
                 invoice1.Show();
             }
         }
-
+        //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             if (button5.BackColor == Color.LightGreen)
@@ -99,7 +104,7 @@ namespace RestaurantPOSApp
                 invoice1.Show();
             }
         }
-
+        //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             if (button6.BackColor == Color.LightGreen)
@@ -109,7 +114,7 @@ namespace RestaurantPOSApp
                 invoice1.Show();
             }
         }
-
+        //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             if (button7.BackColor == Color.LightGreen)
@@ -119,7 +124,7 @@ namespace RestaurantPOSApp
                 invoice1.Show();
             }
         }
-
+        //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox8_Click(object sender, EventArgs e)
         {
             if (button8.BackColor == Color.LightGreen)
@@ -134,7 +139,10 @@ namespace RestaurantPOSApp
         {
 
         }
-
+        // when the user clicks on the button, it will change the background color to lightgreen,
+        //but if it is already light green it will change it back to white. 
+        //if the array tableAvailable doesnt containt this table,it will add the table ID to the arraylist,
+        //but if its already added, then it will remove it(change it back to white). 
         private void button2_Click(object sender, EventArgs e)
         {
             if (button2.BackColor == Color.White)
@@ -155,7 +163,10 @@ namespace RestaurantPOSApp
                 TableAvailable.Remove(2);
             }
         }
-
+        // when the user clicks on the button, it will change the background color to lightgreen,
+        //but if it is already light green it will change it back to white. 
+        //if the array tableAvailable doesnt containt this table, it will add the table ID to the arraylist,
+        //but if its already added, then it will remove it(change it back to white). 
         private void button3_Click(object sender, EventArgs e)
         {
             if (button3.BackColor == Color.White)
@@ -175,7 +186,10 @@ namespace RestaurantPOSApp
                 TableAvailable.Remove(3);
             }
         }
-
+        // when the user clicks on the button, it will change the background color to lightgreen,
+        //but if it is already light green it will change it back to white. 
+        //if the array tableAvailable doesnt containt this table, it will add the table ID to the arraylist,
+        //but if its already added, then it will remove it(change it back to white). 
         private void button4_Click(object sender, EventArgs e)
         {
             if (button4.BackColor == Color.White)
@@ -195,7 +209,10 @@ namespace RestaurantPOSApp
                 TableAvailable.Remove(4);
             }
         }
-
+        // when the user clicks on the button, it will change the background color to lightgreen,
+        //but if it is already light green it will change it back to white. 
+        //if the array tableAvailable doesnt containt this table, it will add the table ID to the arraylist,
+        //but if its already added, then it will remove it(change it back to white). 
         private void button5_Click(object sender, EventArgs e)
         {
             if (button5.BackColor == Color.White)
@@ -215,7 +232,10 @@ namespace RestaurantPOSApp
                 TableAvailable.Remove(5);
             }
         }
-
+        // when the user clicks on the button, it will change the background color to lightgreen,
+        //but if it is already light green it will change it back to white. 
+        //if the array tableAvailable doesnt containt this table, it will add the table ID to the arraylist,
+        //but if its already added, then it will remove it(change it back to white). 
         private void button6_Click(object sender, EventArgs e)
         {
             if (button6.BackColor == Color.White)
@@ -235,7 +255,10 @@ namespace RestaurantPOSApp
                 TableAvailable.Remove(6);
             }
         }
-
+        // when the user clicks on the button, it will change the background color to lightgreen,
+        //but if it is already light green it will change it back to white. 
+        //if the array tableAvailable doesnt containt this table, it will add the table ID to the arraylist,
+        //but if its already added, then it will remove it(change it back to white). 
         private void button7_Click(object sender, EventArgs e)
         {
             if (button7.BackColor == Color.White)
@@ -255,7 +278,10 @@ namespace RestaurantPOSApp
                 TableAvailable.Remove(7);
             }
         }
-
+        // when the user clicks on the button, it will change the background color to lightgreen,
+        //but if it is already light green it will change it back to white. 
+        //if the array tableAvailable doesnt containt this table, it will add the table ID to the arraylist,
+        //but if its already added, then it will remove it(change it back to white). 
         private void button8_Click(object sender, EventArgs e)
         {
             if (button8.BackColor == Color.White)
@@ -280,9 +306,15 @@ namespace RestaurantPOSApp
         {
 
         }
-
+        // when the user clicks on the button, it will change the background color to lightgreen,
+        //but if it is already light green it will change it back to white. 
+        //if the array tableAvailable doesnt containt this table, it will add the table ID to the arraylist,
+        //but if its already added, then it will remove it(change it back to white). 
         private void Tables_Load(object sender, EventArgs e)
         {
+            this.BackgroundImage = Properties.Resources.menu_frame;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+            textBox1.ReadOnly = true;
             Get_Data();
             DataRow[] dr = ds.Employees.Select("EmployeeId = '" + Form1.employeeId + "'");
             if (dr.Length == 0)
@@ -295,7 +327,7 @@ namespace RestaurantPOSApp
 
                 textBox1.Text = d[1].ToString();
             }
-            textBox2.Text = DateTime.Now.TimeOfDay.ToString();
+            textBox2.Text = DateTime.Now.ToString("hh: mm tt");
 
         }
 
@@ -303,7 +335,10 @@ namespace RestaurantPOSApp
         {
 
         }
-
+        // when the user clicks on the button, it will change the background color to lightgreen,
+        //but if it is already light green it will change it back to white. 
+        //if the array tableAvailable doesnt containt this table, it will add the table ID to the arraylist, 
+        //but if its already added, then it will remove it(change it back to white). 
         private void button1_Click(object sender, EventArgs e)
         {
             //id 1
@@ -339,11 +374,16 @@ namespace RestaurantPOSApp
         {
 
         }
-
+        //On Logout button click this form is hidden and menuform will be shown
         private void button9_Click(object sender, EventArgs e)
         {
-            Form1 MenuForm = new Form1();
-            MenuForm.Show();
+            this.Visible = false;
+            menuForm.Show();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

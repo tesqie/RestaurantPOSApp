@@ -1,12 +1,7 @@
 ﻿using RestaurantPOSApp.DataSet1TableAdapters;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RestaurantPOSApp
@@ -21,9 +16,17 @@ namespace RestaurantPOSApp
         EmployeesTableAdapter et;
         InventoryTableAdapter st;
         SuppliersTableAdapter ct;
+        Tables tableForm;
+        Form1 menuForm;
 
         public InventoryForm()
         {
+            InitializeComponent();
+        }
+        public InventoryForm(Tables tableForm, Form1 menuForm)
+        {
+            this.tableForm = tableForm;
+            this.menuForm = menuForm;
             InitializeComponent();
         }
 
@@ -425,8 +428,9 @@ namespace RestaurantPOSApp
                 }
 
 
-                InvoiceForm invForm = new InvoiceForm(true);
+                InvoiceForm invForm = new InvoiceForm(true,this);
                 invForm.Show();
+                this.Visible = false;
             }
         }
 
@@ -449,6 +453,19 @@ namespace RestaurantPOSApp
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void tableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tableForm.Show();
+            this.Close();
+
+        }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            menuForm.Show();
+            this.Close();
         }
     }
 }
