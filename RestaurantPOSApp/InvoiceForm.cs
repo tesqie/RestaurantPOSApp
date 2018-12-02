@@ -12,6 +12,11 @@ using System.Windows.Forms;
 
 namespace RestaurantPOSApp
 {
+    /*
+     * class InvoiceForm
+     * InvoiceForm acts as the final confirmation for any order.
+     * It displays the menu/inventory items meant to be purchased along with price and tax.
+     */
     public partial class InvoiceForm : Form
     {
         DataSet1 ds;
@@ -24,21 +29,38 @@ namespace RestaurantPOSApp
         PurchaseOrdersTableAdapter pot;
         PurchaseOrderlineTableAdapter polt;
 
+        // itemID is a 2-dimensional array meant to store the IDs and quantities of the items that are to be ordered.
         int[,] itemID;
-
-
+        // forInv is a boolean value to indicate whether the order is for a customer or for restocking inventory.
         bool forInv = false;
-        int employeeID = 1;//int.Parse(Form1.employeeId);
+
+        int employeeID = int.Parse(Form1.employeeId);
         int orderID, purchaseorderID;
-        int tableID;
         double salesPrice;
 
+        /*
+         * InvoiceForm default constructor.
+         */
         public InvoiceForm()
         {
             InitializeComponent();
+        }
+
+        /*
+         * InvoiceForm 1 argument constructor
+         * Assigns the global variable forInv.
+         */
+        public InvoiceForm(bool fromInv)
+        {
+            InitializeComponent();
+            this.forInv = fromInv;
 
         }
 
+        /*
+         * Function InvoiceForm_Load
+         * Upon form load the function will fill database tables, assign global variables and populate itemID array.
+         */
         private void InvoiceForm_Load(object sender, EventArgs e)
         {
             this.BackgroundImage = Properties.Resources.menu_frame;
@@ -47,6 +69,7 @@ namespace RestaurantPOSApp
             get_data();
             string name = null;
 
+            // Accesses employee name from ID that was signed in from menuForm.
             DataRow[] dr = ds.Employees.Select("EmployeeID = " + this.employeeID);
             foreach (DataRow d in dr)
             {
@@ -54,23 +77,53 @@ namespace RestaurantPOSApp
             }
             employeeLabel.Text = "Order Placed by: " + name;
 
-            itemID = new int[Form1.orderedItems.Count, 2];
-            int id, qt;
 
-            for (int i = 0; i < Form1.orderedItems.Count(); i++)
+            /* 
+             * Populates itemID array.
+             * First checks whether the order is from menu or inventory.
+             * Populates the itemID array by accessing the string list stored in MenuForm/InventoryForm
+             */
+            if (forInv == false)
             {
-                string product = Form1.orderedItems[i];
-                string[] temp = product.Split(',');
-                id = int.Parse(temp[0]);
-                qt = int.Parse(temp[1]);
+                itemID = new int[Form1.orderedItems.Count, 2];
+                int id, qt;
 
-                itemID[i, 0] = id;
-                itemID[i, 1] = qt;
+                for (int i = 0; i < Form1.orderedItems.Count(); i++)
+                {
+                    string product = Form1.orderedItems[i];
+                    string[] temp = product.Split(',');
+                    id = int.Parse(temp[0]);
+                    qt = int.Parse(temp[1]);
+
+                    itemID[i, 0] = id;
+                    itemID[i, 1] = qt;
+                }
+            }
+            else if (forInv)
+            {
+                itemID = new int[InventoryForm.invOrderedItems.Count, 2];
+                int id, qt;
+
+                for (int i = 0; i < InventoryForm.invOrderedItems.Count(); i++)
+                {
+                    string product = InventoryForm.invOrderedItems[i];
+                    string[] temp = product.Split(',');
+                    id = int.Parse(temp[0]);
+                    qt = int.Parse(temp[1]);
+
+                    itemID[i, 0] = id;
+                    itemID[i, 1] = qt;
+                }
             }
 
             display_order();
         }
 
+
+        /*
+         * Function get_data()
+         * Fills database tables using DataSet.
+         */
         private void get_data()
         {
             ds = new DataSet1();
@@ -93,15 +146,29 @@ namespace RestaurantPOSApp
             polt.Fill(ds.PurchaseOrderline);
         }
 
+        /*
+         * Function display_order()
+         * Displays the order that is to be placed into the listview.
+         * Accesses the itemID array and the appropriate database table to populate the listview.
+         */
         private void display_order()
         {
             double price = 0;
             double tax;
             DataRow[] dr = null;
-            string texttofile = null;
 
+
+            /*
+             * Iterates through the itemID array and displays the itemno, name, quantity and price.
+             * First checks whether the order is from menu or inventory.
+             * Creates a String array to populate with appropriate information
+             * Adds to listview
+             * Updates total price
+             */
             if (forInv == false)
             {
+                // itemID.Length is the total number of elements in the array. itemID.Rank is the number of dimensions the array has.
+                // Using (itemID.Length / itemID.Rank) allows the for loop to iterate throughout its' entire size.
                 for (int i = 0; i < (itemID.Length / itemID.Rank); i++)
                 {
                     dr = ds.Menu.Select("MenuID = " + itemID[i, 0]);
@@ -111,7 +178,6 @@ namespace RestaurantPOSApp
                         ListViewItem lvi = new ListViewItem(row);
                         listView1.Items.Add(lvi);
                         price += double.Parse(d[4].ToString()) * double.Parse(itemID[i, 1].ToString());
-                        texttofile += row;
                     }
                 }
             }
@@ -130,18 +196,42 @@ namespace RestaurantPOSApp
                 }
             }
 
+            //Updating price and tax.
             textBoxPrice.Text = price.ToString();
-            tax = price * 0.13;
+            tax = Math.Round(price * 0.13,2);
             textBoxTax.Text = tax.ToString();
-            salesPrice = price + tax;
+            salesPrice = Math.Round(price + tax,2);
             textBoxTotal.Text = salesPrice.ToString();
-            //File.WriteAllText("invoice.txt", texttofile);
+        }
+
+        /*
+         * Function backToolStripMenuItem_Click
+         * Back button MenuStrip implementation.
+         * Returns to the previous form based on where the order was placed (menu or inventory).
+         * Closes the InvoiceForm.
+         */
+        private void backToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Returns to InventoryForm
+            if (forInv)
+            {
+
+            }
+            // Returns to MenuForm
+            else
+            {
+
+            }
         }
 
 
-
+        /*
+         * Function orderConfirmation_Click
+         * Upon clicking the Confirmation button the order will be placed the the appropriate database tables will be updated.
+         */
         private void orderConfirmation_Click(object sender, EventArgs e)
         {
+            // Database updates for customer orders. Updates the Orders and Orderline tables.
             if (forInv == false)
             {
                 DataSet1.OrdersRow or = ds.Orders.NewOrdersRow();
@@ -152,6 +242,7 @@ namespace RestaurantPOSApp
                 ds.Orders.AddOrdersRow(or);
                 ot.Update(ds.Orders);
 
+                // Assigns the global variable orderID to the maximum value of the OrderID column in the Orders table.
                 this.orderID = ds.Tables["Orders"].AsEnumerable().Max(x => x.Field<int>("OrderID"));
 
                 DataSet1.OrderlineRow olr = null;
@@ -167,6 +258,7 @@ namespace RestaurantPOSApp
                     olt.Update(ds.Orderline);
                 }
             }
+            // Database updates for inventory orders. Updates the PurchaseOrders, PurchaseOrderline and Inventory tables.
             else if (forInv == true)
             {
                 DataSet1.PurchaseOrdersRow por = ds.PurchaseOrders.NewPurchaseOrdersRow();
@@ -177,9 +269,12 @@ namespace RestaurantPOSApp
                 ds.PurchaseOrders.AddPurchaseOrdersRow(por);
                 pot.Update(ds.PurchaseOrders);
 
+                // Assigns the global variable purchaseorderID to the maximum value of the PurchaseOrderID in the PurchaseOrders table.
                 this.purchaseorderID = ds.Tables["PurchaseOrders"].AsEnumerable().Max(x => x.Field<int>("PurchaseOrderID"));
 
                 DataSet1.PurchaseOrderlineRow polr = null;
+                int inventoryID = 0;
+                int inventoryQuantity = 0;
 
                 for (int i = 0; i < (itemID.Length / itemID.Rank); i++)
                 {
@@ -190,6 +285,16 @@ namespace RestaurantPOSApp
 
                     ds.PurchaseOrderline.AddPurchaseOrderlineRow(polr);
                     polt.Update(ds.PurchaseOrderline);
+
+                    inventoryID = itemID[i, 0];
+                    inventoryQuantity = itemID[i, 1];
+
+                    foreach (DataRow dr in ds.Tables["Inventory"].Select("ProductID = " + inventoryID))
+                    {
+                        dr[3] = inventoryQuantity;
+                    }
+                    ds.Tables["Inventory"].AcceptChanges();
+                    it.Update(ds.Inventory);
                 }
             }
         }

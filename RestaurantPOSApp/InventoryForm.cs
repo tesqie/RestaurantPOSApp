@@ -14,7 +14,7 @@ namespace RestaurantPOSApp
     public partial class InventoryForm : Form
 
     {
-        public List<string> invOrderedItems;
+        public static List<string> invOrderedItems;
 
         // Create Dataset and Table Adapters
         DataSet1 ds;
@@ -418,14 +418,14 @@ namespace RestaurantPOSApp
                 listView2.Text = "";
                 foreach (ListViewItem item in listView2.Items)
                 {
-                    items.Add(item.SubItems[1].Text);
+                    items.Add(item.SubItems[0].Text);
                     qty.Add(item.SubItems[2].Text);
                     invOrderedItems.Add(items[i].ToString() + "," + qty[i].ToString());
                     i++;
                 }
 
 
-                InvoiceForm invForm = new InvoiceForm();
+                InvoiceForm invForm = new InvoiceForm(true);
                 invForm.Show();
             }
         }

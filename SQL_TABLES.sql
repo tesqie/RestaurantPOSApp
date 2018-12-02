@@ -71,7 +71,7 @@ CREATE TABLE Employees(
 );
 
 INSERT INTO Employees(EmployeeName, EmployeeUserName, EmployeePassword) VALUES
-	('TestEmployee', 'TestUserName', 'TestPassword');
+	('test', 'test', 'test');
 
 CREATE TABLE Orders(
 	OrderID INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,

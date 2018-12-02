@@ -40,19 +40,19 @@ namespace RestaurantPOSApp {
         
         private PurchaseOrdersDataTable tablePurchaseOrders;
         
-        private global::System.Data.DataRelation relationFK__Inventory__Suppl__656C112C;
+        private global::System.Data.DataRelation relationFK__Inventory__Suppl__5812160E;
         
-        private global::System.Data.DataRelation relationFK__Orderline__MenuI__6E01572D;
+        private global::System.Data.DataRelation relationFK__Orderline__MenuI__60A75C0F;
         
-        private global::System.Data.DataRelation relationFK__Orderline__Order__6D0D32F4;
+        private global::System.Data.DataRelation relationFK__Orderline__Order__5FB337D6;
         
-        private global::System.Data.DataRelation relationFK__Orders__Employee__6A30C649;
+        private global::System.Data.DataRelation relationFK__Orders__Employee__5CD6CB2B;
         
-        private global::System.Data.DataRelation relationFK__PurchaseO__Produ__74AE54BC;
+        private global::System.Data.DataRelation relationFK__PurchaseO__Produ__6754599E;
         
-        private global::System.Data.DataRelation relationFK__PurchaseO__Purch__73BA3083;
+        private global::System.Data.DataRelation relationFK__PurchaseO__Purch__66603565;
         
-        private global::System.Data.DataRelation relationFK__PurchaseO__Emplo__70DDC3D8;
+        private global::System.Data.DataRelation relationFK__PurchaseO__Emplo__6383C8BA;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -376,13 +376,13 @@ namespace RestaurantPOSApp {
                     this.tablePurchaseOrders.InitVars();
                 }
             }
-            this.relationFK__Inventory__Suppl__656C112C = this.Relations["FK__Inventory__Suppl__656C112C"];
-            this.relationFK__Orderline__MenuI__6E01572D = this.Relations["FK__Orderline__MenuI__6E01572D"];
-            this.relationFK__Orderline__Order__6D0D32F4 = this.Relations["FK__Orderline__Order__6D0D32F4"];
-            this.relationFK__Orders__Employee__6A30C649 = this.Relations["FK__Orders__Employee__6A30C649"];
-            this.relationFK__PurchaseO__Produ__74AE54BC = this.Relations["FK__PurchaseO__Produ__74AE54BC"];
-            this.relationFK__PurchaseO__Purch__73BA3083 = this.Relations["FK__PurchaseO__Purch__73BA3083"];
-            this.relationFK__PurchaseO__Emplo__70DDC3D8 = this.Relations["FK__PurchaseO__Emplo__70DDC3D8"];
+            this.relationFK__Inventory__Suppl__5812160E = this.Relations["FK__Inventory__Suppl__5812160E"];
+            this.relationFK__Orderline__MenuI__60A75C0F = this.Relations["FK__Orderline__MenuI__60A75C0F"];
+            this.relationFK__Orderline__Order__5FB337D6 = this.Relations["FK__Orderline__Order__5FB337D6"];
+            this.relationFK__Orders__Employee__5CD6CB2B = this.Relations["FK__Orders__Employee__5CD6CB2B"];
+            this.relationFK__PurchaseO__Produ__6754599E = this.Relations["FK__PurchaseO__Produ__6754599E"];
+            this.relationFK__PurchaseO__Purch__66603565 = this.Relations["FK__PurchaseO__Purch__66603565"];
+            this.relationFK__PurchaseO__Emplo__6383C8BA = this.Relations["FK__PurchaseO__Emplo__6383C8BA"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -409,34 +409,34 @@ namespace RestaurantPOSApp {
             base.Tables.Add(this.tablePurchaseOrderline);
             this.tablePurchaseOrders = new PurchaseOrdersDataTable();
             base.Tables.Add(this.tablePurchaseOrders);
-            this.relationFK__Inventory__Suppl__656C112C = new global::System.Data.DataRelation("FK__Inventory__Suppl__656C112C", new global::System.Data.DataColumn[] {
+            this.relationFK__Inventory__Suppl__5812160E = new global::System.Data.DataRelation("FK__Inventory__Suppl__5812160E", new global::System.Data.DataColumn[] {
                         this.tableSuppliers.SupplierIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableInventory.SupplierIDColumn}, false);
-            this.Relations.Add(this.relationFK__Inventory__Suppl__656C112C);
-            this.relationFK__Orderline__MenuI__6E01572D = new global::System.Data.DataRelation("FK__Orderline__MenuI__6E01572D", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Inventory__Suppl__5812160E);
+            this.relationFK__Orderline__MenuI__60A75C0F = new global::System.Data.DataRelation("FK__Orderline__MenuI__60A75C0F", new global::System.Data.DataColumn[] {
                         this.tableMenu.MenuIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableOrderline.MenuIDColumn}, false);
-            this.Relations.Add(this.relationFK__Orderline__MenuI__6E01572D);
-            this.relationFK__Orderline__Order__6D0D32F4 = new global::System.Data.DataRelation("FK__Orderline__Order__6D0D32F4", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Orderline__MenuI__60A75C0F);
+            this.relationFK__Orderline__Order__5FB337D6 = new global::System.Data.DataRelation("FK__Orderline__Order__5FB337D6", new global::System.Data.DataColumn[] {
                         this.tableOrders.OrderIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableOrderline.OrderIDColumn}, false);
-            this.Relations.Add(this.relationFK__Orderline__Order__6D0D32F4);
-            this.relationFK__Orders__Employee__6A30C649 = new global::System.Data.DataRelation("FK__Orders__Employee__6A30C649", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Orderline__Order__5FB337D6);
+            this.relationFK__Orders__Employee__5CD6CB2B = new global::System.Data.DataRelation("FK__Orders__Employee__5CD6CB2B", new global::System.Data.DataColumn[] {
                         this.tableEmployees.EmployeeIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableOrders.EmployeeIDColumn}, false);
-            this.Relations.Add(this.relationFK__Orders__Employee__6A30C649);
-            this.relationFK__PurchaseO__Produ__74AE54BC = new global::System.Data.DataRelation("FK__PurchaseO__Produ__74AE54BC", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Orders__Employee__5CD6CB2B);
+            this.relationFK__PurchaseO__Produ__6754599E = new global::System.Data.DataRelation("FK__PurchaseO__Produ__6754599E", new global::System.Data.DataColumn[] {
                         this.tableInventory.ProductIDColumn}, new global::System.Data.DataColumn[] {
                         this.tablePurchaseOrderline.ProductIDColumn}, false);
-            this.Relations.Add(this.relationFK__PurchaseO__Produ__74AE54BC);
-            this.relationFK__PurchaseO__Purch__73BA3083 = new global::System.Data.DataRelation("FK__PurchaseO__Purch__73BA3083", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__PurchaseO__Produ__6754599E);
+            this.relationFK__PurchaseO__Purch__66603565 = new global::System.Data.DataRelation("FK__PurchaseO__Purch__66603565", new global::System.Data.DataColumn[] {
                         this.tablePurchaseOrders.PurchaseOrderIDColumn}, new global::System.Data.DataColumn[] {
                         this.tablePurchaseOrderline.PurchaseOrderIDColumn}, false);
-            this.Relations.Add(this.relationFK__PurchaseO__Purch__73BA3083);
-            this.relationFK__PurchaseO__Emplo__70DDC3D8 = new global::System.Data.DataRelation("FK__PurchaseO__Emplo__70DDC3D8", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__PurchaseO__Purch__66603565);
+            this.relationFK__PurchaseO__Emplo__6383C8BA = new global::System.Data.DataRelation("FK__PurchaseO__Emplo__6383C8BA", new global::System.Data.DataColumn[] {
                         this.tableEmployees.EmployeeIDColumn}, new global::System.Data.DataColumn[] {
                         this.tablePurchaseOrders.EmployeeIDColumn}, false);
-            this.Relations.Add(this.relationFK__PurchaseO__Emplo__70DDC3D8);
+            this.Relations.Add(this.relationFK__PurchaseO__Emplo__6383C8BA);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1277,7 +1277,7 @@ namespace RestaurantPOSApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InventoryRow AddInventoryRow(string ProductName, decimal Price, int OnHand, SuppliersRow parentSuppliersRowByFK__Inventory__Suppl__656C112C) {
+            public InventoryRow AddInventoryRow(string ProductName, decimal Price, int OnHand, SuppliersRow parentSuppliersRowByFK__Inventory__Suppl__5812160E) {
                 InventoryRow rowInventoryRow = ((InventoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1285,8 +1285,8 @@ namespace RestaurantPOSApp {
                         Price,
                         OnHand,
                         null};
-                if ((parentSuppliersRowByFK__Inventory__Suppl__656C112C != null)) {
-                    columnValuesArray[4] = parentSuppliersRowByFK__Inventory__Suppl__656C112C[0];
+                if ((parentSuppliersRowByFK__Inventory__Suppl__5812160E != null)) {
+                    columnValuesArray[4] = parentSuppliersRowByFK__Inventory__Suppl__5812160E[0];
                 }
                 rowInventoryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInventoryRow);
@@ -1912,18 +1912,18 @@ namespace RestaurantPOSApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public OrderlineRow AddOrderlineRow(OrdersRow parentOrdersRowByFK__Orderline__Order__6D0D32F4, MenuRow parentMenuRowByFK__Orderline__MenuI__6E01572D, int Quantity, decimal SalesPrice) {
+            public OrderlineRow AddOrderlineRow(OrdersRow parentOrdersRowByFK__Orderline__Order__5FB337D6, MenuRow parentMenuRowByFK__Orderline__MenuI__60A75C0F, int Quantity, decimal SalesPrice) {
                 OrderlineRow rowOrderlineRow = ((OrderlineRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         Quantity,
                         SalesPrice};
-                if ((parentOrdersRowByFK__Orderline__Order__6D0D32F4 != null)) {
-                    columnValuesArray[0] = parentOrdersRowByFK__Orderline__Order__6D0D32F4[0];
+                if ((parentOrdersRowByFK__Orderline__Order__5FB337D6 != null)) {
+                    columnValuesArray[0] = parentOrdersRowByFK__Orderline__Order__5FB337D6[0];
                 }
-                if ((parentMenuRowByFK__Orderline__MenuI__6E01572D != null)) {
-                    columnValuesArray[1] = parentMenuRowByFK__Orderline__MenuI__6E01572D[0];
+                if ((parentMenuRowByFK__Orderline__MenuI__60A75C0F != null)) {
+                    columnValuesArray[1] = parentMenuRowByFK__Orderline__MenuI__60A75C0F[0];
                 }
                 rowOrderlineRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOrderlineRow);
@@ -2200,14 +2200,14 @@ namespace RestaurantPOSApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public OrdersRow AddOrdersRow(System.DateTime OrderDate, EmployeesRow parentEmployeesRowByFK__Orders__Employee__6A30C649) {
+            public OrdersRow AddOrdersRow(System.DateTime OrderDate, EmployeesRow parentEmployeesRowByFK__Orders__Employee__5CD6CB2B) {
                 OrdersRow rowOrdersRow = ((OrdersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         OrderDate,
                         null};
-                if ((parentEmployeesRowByFK__Orders__Employee__6A30C649 != null)) {
-                    columnValuesArray[2] = parentEmployeesRowByFK__Orders__Employee__6A30C649[0];
+                if ((parentEmployeesRowByFK__Orders__Employee__5CD6CB2B != null)) {
+                    columnValuesArray[2] = parentEmployeesRowByFK__Orders__Employee__5CD6CB2B[0];
                 }
                 rowOrdersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOrdersRow);
@@ -2504,18 +2504,18 @@ namespace RestaurantPOSApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PurchaseOrderlineRow AddPurchaseOrderlineRow(PurchaseOrdersRow parentPurchaseOrdersRowByFK__PurchaseO__Purch__73BA3083, InventoryRow parentInventoryRowByFK__PurchaseO__Produ__74AE54BC, int Quantity, decimal SalesPrice) {
+            public PurchaseOrderlineRow AddPurchaseOrderlineRow(PurchaseOrdersRow parentPurchaseOrdersRowByFK__PurchaseO__Purch__66603565, InventoryRow parentInventoryRowByFK__PurchaseO__Produ__6754599E, int Quantity, decimal SalesPrice) {
                 PurchaseOrderlineRow rowPurchaseOrderlineRow = ((PurchaseOrderlineRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         Quantity,
                         SalesPrice};
-                if ((parentPurchaseOrdersRowByFK__PurchaseO__Purch__73BA3083 != null)) {
-                    columnValuesArray[0] = parentPurchaseOrdersRowByFK__PurchaseO__Purch__73BA3083[0];
+                if ((parentPurchaseOrdersRowByFK__PurchaseO__Purch__66603565 != null)) {
+                    columnValuesArray[0] = parentPurchaseOrdersRowByFK__PurchaseO__Purch__66603565[0];
                 }
-                if ((parentInventoryRowByFK__PurchaseO__Produ__74AE54BC != null)) {
-                    columnValuesArray[1] = parentInventoryRowByFK__PurchaseO__Produ__74AE54BC[0];
+                if ((parentInventoryRowByFK__PurchaseO__Produ__6754599E != null)) {
+                    columnValuesArray[1] = parentInventoryRowByFK__PurchaseO__Produ__6754599E[0];
                 }
                 rowPurchaseOrderlineRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPurchaseOrderlineRow);
@@ -2790,14 +2790,14 @@ namespace RestaurantPOSApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PurchaseOrdersRow AddPurchaseOrdersRow(System.DateTime PurchaseOrderDate, EmployeesRow parentEmployeesRowByFK__PurchaseO__Emplo__70DDC3D8) {
+            public PurchaseOrdersRow AddPurchaseOrdersRow(System.DateTime PurchaseOrderDate, EmployeesRow parentEmployeesRowByFK__PurchaseO__Emplo__6383C8BA) {
                 PurchaseOrdersRow rowPurchaseOrdersRow = ((PurchaseOrdersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         PurchaseOrderDate,
                         null};
-                if ((parentEmployeesRowByFK__PurchaseO__Emplo__70DDC3D8 != null)) {
-                    columnValuesArray[2] = parentEmployeesRowByFK__PurchaseO__Emplo__70DDC3D8[0];
+                if ((parentEmployeesRowByFK__PurchaseO__Emplo__6383C8BA != null)) {
+                    columnValuesArray[2] = parentEmployeesRowByFK__PurchaseO__Emplo__6383C8BA[0];
                 }
                 rowPurchaseOrdersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPurchaseOrdersRow);
@@ -3088,22 +3088,22 @@ namespace RestaurantPOSApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public OrdersRow[] GetOrdersRows() {
-                if ((this.Table.ChildRelations["FK__Orders__Employee__6A30C649"] == null)) {
+                if ((this.Table.ChildRelations["FK__Orders__Employee__5CD6CB2B"] == null)) {
                     return new OrdersRow[0];
                 }
                 else {
-                    return ((OrdersRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Orders__Employee__6A30C649"])));
+                    return ((OrdersRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Orders__Employee__5CD6CB2B"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PurchaseOrdersRow[] GetPurchaseOrdersRows() {
-                if ((this.Table.ChildRelations["FK__PurchaseO__Emplo__70DDC3D8"] == null)) {
+                if ((this.Table.ChildRelations["FK__PurchaseO__Emplo__6383C8BA"] == null)) {
                     return new PurchaseOrdersRow[0];
                 }
                 else {
-                    return ((PurchaseOrdersRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PurchaseO__Emplo__70DDC3D8"])));
+                    return ((PurchaseOrdersRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PurchaseO__Emplo__6383C8BA"])));
                 }
             }
         }
@@ -3164,11 +3164,11 @@ namespace RestaurantPOSApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public InventoryRow[] GetInventoryRows() {
-                if ((this.Table.ChildRelations["FK__Inventory__Suppl__656C112C"] == null)) {
+                if ((this.Table.ChildRelations["FK__Inventory__Suppl__5812160E"] == null)) {
                     return new InventoryRow[0];
                 }
                 else {
-                    return ((InventoryRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Inventory__Suppl__656C112C"])));
+                    return ((InventoryRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Inventory__Suppl__5812160E"])));
                 }
             }
         }
@@ -3256,10 +3256,10 @@ namespace RestaurantPOSApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SuppliersRow SuppliersRow {
                 get {
-                    return ((SuppliersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Inventory__Suppl__656C112C"])));
+                    return ((SuppliersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Inventory__Suppl__5812160E"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Inventory__Suppl__656C112C"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Inventory__Suppl__5812160E"]);
                 }
             }
             
@@ -3290,11 +3290,11 @@ namespace RestaurantPOSApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PurchaseOrderlineRow[] GetPurchaseOrderlineRows() {
-                if ((this.Table.ChildRelations["FK__PurchaseO__Produ__74AE54BC"] == null)) {
+                if ((this.Table.ChildRelations["FK__PurchaseO__Produ__6754599E"] == null)) {
                     return new PurchaseOrderlineRow[0];
                 }
                 else {
-                    return ((PurchaseOrderlineRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PurchaseO__Produ__74AE54BC"])));
+                    return ((PurchaseOrderlineRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PurchaseO__Produ__6754599E"])));
                 }
             }
         }
@@ -3439,11 +3439,11 @@ namespace RestaurantPOSApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public OrderlineRow[] GetOrderlineRows() {
-                if ((this.Table.ChildRelations["FK__Orderline__MenuI__6E01572D"] == null)) {
+                if ((this.Table.ChildRelations["FK__Orderline__MenuI__60A75C0F"] == null)) {
                     return new OrderlineRow[0];
                 }
                 else {
-                    return ((OrderlineRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Orderline__MenuI__6E01572D"])));
+                    return ((OrderlineRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Orderline__MenuI__60A75C0F"])));
                 }
             }
         }
@@ -3520,10 +3520,10 @@ namespace RestaurantPOSApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public MenuRow MenuRow {
                 get {
-                    return ((MenuRow)(this.GetParentRow(this.Table.ParentRelations["FK__Orderline__MenuI__6E01572D"])));
+                    return ((MenuRow)(this.GetParentRow(this.Table.ParentRelations["FK__Orderline__MenuI__60A75C0F"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Orderline__MenuI__6E01572D"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Orderline__MenuI__60A75C0F"]);
                 }
             }
             
@@ -3531,10 +3531,10 @@ namespace RestaurantPOSApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public OrdersRow OrdersRow {
                 get {
-                    return ((OrdersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Orderline__Order__6D0D32F4"])));
+                    return ((OrdersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Orderline__Order__5FB337D6"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Orderline__Order__6D0D32F4"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Orderline__Order__5FB337D6"]);
                 }
             }
             
@@ -3619,10 +3619,10 @@ namespace RestaurantPOSApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public EmployeesRow EmployeesRow {
                 get {
-                    return ((EmployeesRow)(this.GetParentRow(this.Table.ParentRelations["FK__Orders__Employee__6A30C649"])));
+                    return ((EmployeesRow)(this.GetParentRow(this.Table.ParentRelations["FK__Orders__Employee__5CD6CB2B"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Orders__Employee__6A30C649"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Orders__Employee__5CD6CB2B"]);
                 }
             }
             
@@ -3641,11 +3641,11 @@ namespace RestaurantPOSApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public OrderlineRow[] GetOrderlineRows() {
-                if ((this.Table.ChildRelations["FK__Orderline__Order__6D0D32F4"] == null)) {
+                if ((this.Table.ChildRelations["FK__Orderline__Order__5FB337D6"] == null)) {
                     return new OrderlineRow[0];
                 }
                 else {
-                    return ((OrderlineRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Orderline__Order__6D0D32F4"])));
+                    return ((OrderlineRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Orderline__Order__5FB337D6"])));
                 }
             }
         }
@@ -3732,10 +3732,10 @@ namespace RestaurantPOSApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public InventoryRow InventoryRow {
                 get {
-                    return ((InventoryRow)(this.GetParentRow(this.Table.ParentRelations["FK__PurchaseO__Produ__74AE54BC"])));
+                    return ((InventoryRow)(this.GetParentRow(this.Table.ParentRelations["FK__PurchaseO__Produ__6754599E"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__PurchaseO__Produ__74AE54BC"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__PurchaseO__Produ__6754599E"]);
                 }
             }
             
@@ -3743,10 +3743,10 @@ namespace RestaurantPOSApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PurchaseOrdersRow PurchaseOrdersRow {
                 get {
-                    return ((PurchaseOrdersRow)(this.GetParentRow(this.Table.ParentRelations["FK__PurchaseO__Purch__73BA3083"])));
+                    return ((PurchaseOrdersRow)(this.GetParentRow(this.Table.ParentRelations["FK__PurchaseO__Purch__66603565"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__PurchaseO__Purch__73BA3083"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__PurchaseO__Purch__66603565"]);
                 }
             }
             
@@ -3860,10 +3860,10 @@ namespace RestaurantPOSApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public EmployeesRow EmployeesRow {
                 get {
-                    return ((EmployeesRow)(this.GetParentRow(this.Table.ParentRelations["FK__PurchaseO__Emplo__70DDC3D8"])));
+                    return ((EmployeesRow)(this.GetParentRow(this.Table.ParentRelations["FK__PurchaseO__Emplo__6383C8BA"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__PurchaseO__Emplo__70DDC3D8"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__PurchaseO__Emplo__6383C8BA"]);
                 }
             }
             
@@ -3894,11 +3894,11 @@ namespace RestaurantPOSApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PurchaseOrderlineRow[] GetPurchaseOrderlineRows() {
-                if ((this.Table.ChildRelations["FK__PurchaseO__Purch__73BA3083"] == null)) {
+                if ((this.Table.ChildRelations["FK__PurchaseO__Purch__66603565"] == null)) {
                     return new PurchaseOrderlineRow[0];
                 }
                 else {
-                    return ((PurchaseOrderlineRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PurchaseO__Purch__73BA3083"])));
+                    return ((PurchaseOrderlineRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PurchaseO__Purch__66603565"])));
                 }
             }
         }
@@ -4346,7 +4346,7 @@ SELECT EmployeeID, EmployeeName, EmployeeUserName, EmployeePassword FROM Employe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString1;
+            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4727,7 +4727,7 @@ SELECT SupplierID, SupplierName FROM Suppliers WHERE (SupplierID = @SupplierID)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString1;
+            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5068,7 +5068,7 @@ SELECT ProductID, ProductName, Price, OnHand, SupplierID FROM Inventory WHERE (P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString1;
+            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5448,7 +5448,7 @@ SELECT MenuID, MenuType, MenuName, MenuDescr, Price FROM Menu WHERE (MenuID = @M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString1;
+            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5841,7 +5841,7 @@ SELECT MenuID, MenuType, MenuName, MenuDescr, Price FROM Menu WHERE (MenuID = @M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString1;
+            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6098,7 +6098,7 @@ SELECT OrderID, OrderDate, EmployeeID FROM Orders WHERE (OrderID = @OrderID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString1;
+            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6411,7 +6411,7 @@ SELECT OrderID, OrderDate, EmployeeID FROM Orders WHERE (OrderID = @OrderID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString1;
+            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6679,7 +6679,7 @@ SELECT PurchaseOrderID, PurchaseOrderDate, EmployeeID FROM PurchaseOrders WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString1;
+            this._connection.ConnectionString = global::RestaurantPOSApp.Properties.Settings.Default.RestaurantDBConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
