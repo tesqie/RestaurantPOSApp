@@ -57,82 +57,98 @@ namespace RestaurantPOSApp
         //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            /*
             if (button1.BackColor == Color.LightGreen)
             {
 
                 InvoiceForm invoice1 = new InvoiceForm();
                 invoice1.Show();
             }
+            */
         }
         //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if (button2.BackColor == Color.LightGreen)
-            {
+            /*
+           if (button1.BackColor == Color.LightGreen)
+           {
 
-                InvoiceForm invoice1 = new InvoiceForm();
-                invoice1.Show();
-            }
+               InvoiceForm invoice1 = new InvoiceForm();
+               invoice1.Show();
+           }
+           */
         }
         //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if (button3.BackColor == Color.LightGreen)
-            {
+            /*
+           if (button1.BackColor == Color.LightGreen)
+           {
 
-                InvoiceForm invoice1 = new InvoiceForm();
-                invoice1.Show();
-            }
+               InvoiceForm invoice1 = new InvoiceForm();
+               invoice1.Show();
+           }
+           */
         }
         //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            if (button4.BackColor == Color.LightGreen)
+            /*
+            if (button1.BackColor == Color.LightGreen)
             {
 
                 InvoiceForm invoice1 = new InvoiceForm();
                 invoice1.Show();
             }
+            */
         }
         //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            if (button5.BackColor == Color.LightGreen)
-            {
+            /*
+           if (button1.BackColor == Color.LightGreen)
+           {
 
-                InvoiceForm invoice1 = new InvoiceForm();
-                invoice1.Show();
-            }
+               InvoiceForm invoice1 = new InvoiceForm();
+               invoice1.Show();
+           }
+           */
         }
         //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            if (button6.BackColor == Color.LightGreen)
+            /*
+            if (button1.BackColor == Color.LightGreen)
             {
 
                 InvoiceForm invoice1 = new InvoiceForm();
                 invoice1.Show();
             }
+            */
         }
         //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            if (button7.BackColor == Color.LightGreen)
-            {
+            /*
+           if (button1.BackColor == Color.LightGreen)
+           {
 
-                InvoiceForm invoice1 = new InvoiceForm();
-                invoice1.Show();
-            }
+               InvoiceForm invoice1 = new InvoiceForm();
+               invoice1.Show();
+           }
+           */
         }
         //by clicking on the picture, it will allow you to go to invoice form, if the button under the image is lightgreen
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            if (button8.BackColor == Color.LightGreen)
-            {
+            /*
+           if (button1.BackColor == Color.LightGreen)
+           {
 
-                InvoiceForm invoice1 = new InvoiceForm();
-                invoice1.Show();
-            }
+               InvoiceForm invoice1 = new InvoiceForm();
+               invoice1.Show();
+           }
+           */
         }
 
         private void button1_MouseClick(object sender, MouseEventArgs e)
@@ -395,6 +411,11 @@ namespace RestaurantPOSApp
             this.Hide();
             
             
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -51,6 +51,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.button10 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -108,6 +108,7 @@
             this.label1.Size = new System.Drawing.Size(61, 20);
             this.label1.TabIndex = 9;
             this.label1.Text = "Table 1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -324,6 +325,17 @@
             this.panel2.Size = new System.Drawing.Size(236, 431);
             this.panel2.TabIndex = 32;
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(20, 323);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(120, 39);
+            this.button10.TabIndex = 32;
+            this.button10.TabStop = false;
+            this.button10.Text = "Logout";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(20, 271);
@@ -482,17 +494,6 @@
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 30;
             this.pictureBox9.TabStop = false;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(20, 323);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(120, 39);
-            this.button10.TabIndex = 32;
-            this.button10.TabStop = false;
-            this.button10.Text = "Logout";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // Tables
             // 
