@@ -52,7 +52,7 @@ namespace RestaurantPOSApp
             Get_Data();
 
             TimeSpan now = DateTime.Now.TimeOfDay;
-            TimeSpan startAM = new TimeSpan(24, 0, 0);
+            TimeSpan startAM = new TimeSpan(0, 0, 0);
             TimeSpan endAM = new TimeSpan(11, 0, 0);
             TimeSpan startLunch = new TimeSpan(11, 0, 1);
             TimeSpan endLunch = new TimeSpan(15, 0, 0);
