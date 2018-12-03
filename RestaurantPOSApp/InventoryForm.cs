@@ -438,16 +438,18 @@ namespace RestaurantPOSApp
         // Go to the menuform
         private void label14_Click(object sender, EventArgs e)
         {
-            //Form1 invForm = new Form1();
-            menuForm.Show();
+            Form1.employeeId = null;
+            Form1 form = new Form1();
+            form.Show();
             this.Hide();
         }
 
         // Go to the menuform
         private void label13_Click(object sender, EventArgs e)
         {
-            //Form1 invForm = new Form1();
-            menuForm.Show();
+            Form1.employeeId = null;
+            Form1 form = new Form1();
+            form.Show();
             this.Hide();
         }
 

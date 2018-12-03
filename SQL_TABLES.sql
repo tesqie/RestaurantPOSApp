@@ -29,10 +29,10 @@ INSERT INTO Menu(MenuType, MenuName, Price,MenuDescr) VALUES
 	('Lunch', 'Chicken Burger', 4.99,'Our chicken is lab grown and no chicken was harmed'),
 	('Lunch', 'Veggie Burger', 5.29,'All kinds of delicious vegetables'),
 	('Lunch', 'Chicken Salad', 15.99,'Delicious'),
-	('Lunch', 'Shawarma', 19.99,'dsda'),
+	('Lunch', 'Shawarma', 19.99,'The best shawrma in town'),
 	('Dinner', 'Steak', 24.99,'Our steak is created using quantum technology'),
 	('Dinner', 'Prime Rib', 34.99,'Best prime ribs'),
-	('Dinner', 'Pasta', 19.99,'pasta is good'),
+	('Dinner', 'Pasta', 19.99,'Pasta is good'),
 	('Dinner', 'Salad', 9.99,'Yummy salad'),
 	('Dinner', 'Garlic Bread', 4.99,'garlic bread');
 
@@ -71,7 +71,8 @@ CREATE TABLE Employees(
 );
 
 INSERT INTO Employees(EmployeeName, EmployeeUserName, EmployeePassword) VALUES
-	('test', 'test', 'test');
+	('test', 'test', 'test'),
+	('Abdul', 'Abdul', 'test');
 
 CREATE TABLE Orders(
 	OrderID INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,

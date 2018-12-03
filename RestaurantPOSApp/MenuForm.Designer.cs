@@ -425,7 +425,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(641, 405);
+            this.label12.Location = new System.Drawing.Point(648, 289);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 20);
             this.label12.TabIndex = 18;
@@ -434,7 +434,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(641, 440);
+            this.label13.Location = new System.Drawing.Point(648, 324);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(38, 20);
             this.label13.TabIndex = 19;
@@ -443,7 +443,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(641, 468);
+            this.label14.Location = new System.Drawing.Point(648, 352);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(48, 20);
             this.label14.TabIndex = 20;
@@ -451,7 +451,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(747, 402);
+            this.textBox1.Location = new System.Drawing.Point(754, 286);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 26);
@@ -459,7 +459,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(747, 436);
+            this.textBox2.Location = new System.Drawing.Point(754, 320);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 26);
@@ -467,7 +467,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(747, 468);
+            this.textBox3.Location = new System.Drawing.Point(754, 352);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(100, 26);
@@ -475,7 +475,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(645, 507);
+            this.button1.Location = new System.Drawing.Point(652, 391);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 51);
             this.button1.TabIndex = 24;
@@ -713,6 +713,13 @@
             this.panel7.BackColor = System.Drawing.Color.Silver;
             this.panel7.Controls.Add(this.panel6);
             this.panel7.Controls.Add(this.listView1);
+            this.panel7.Controls.Add(this.label12);
+            this.panel7.Controls.Add(this.label13);
+            this.panel7.Controls.Add(this.label14);
+            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.button1);
+            this.panel7.Controls.Add(this.textBox2);
+            this.panel7.Controls.Add(this.textBox3);
             this.panel7.Location = new System.Drawing.Point(5, 116);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1012, 453);
@@ -729,13 +736,6 @@
             this.Controls.Add(this.pictureBox13);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
@@ -787,6 +787,7 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
