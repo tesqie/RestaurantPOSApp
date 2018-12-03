@@ -50,7 +50,7 @@ namespace RestaurantPOSApp
          */
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            this.SetDesktopLocation(300, 100);
             Get_Data();
 
             TimeSpan now = DateTime.Now.TimeOfDay;

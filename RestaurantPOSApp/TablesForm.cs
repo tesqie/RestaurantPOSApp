@@ -312,6 +312,7 @@ namespace RestaurantPOSApp
         //but if its already added, then it will remove it(change it back to white). 
         private void Tables_Load(object sender, EventArgs e)
         {
+            this.SetDesktopLocation(300, 100);
             this.BackgroundImage = Properties.Resources.menu_frame;
             this.BackgroundImageLayout = ImageLayout.Stretch;
             textBox1.ReadOnly = true;

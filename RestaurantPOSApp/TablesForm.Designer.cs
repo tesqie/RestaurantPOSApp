@@ -188,7 +188,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(147, 148);
+            this.button2.Location = new System.Drawing.Point(147, 149);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 57);
             this.button2.TabIndex = 18;
@@ -200,7 +200,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(258, 148);
+            this.button3.Location = new System.Drawing.Point(261, 148);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(88, 55);
             this.button3.TabIndex = 19;
@@ -226,7 +226,7 @@
             this.button5.BackColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(39, 352);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(86, 60);
+            this.button5.Size = new System.Drawing.Size(88, 55);
             this.button5.TabIndex = 21;
             this.button5.Text = "Make Available";
             this.button5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -238,7 +238,7 @@
             this.button6.BackColor = System.Drawing.Color.White;
             this.button6.Location = new System.Drawing.Point(147, 352);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(86, 60);
+            this.button6.Size = new System.Drawing.Size(88, 55);
             this.button6.TabIndex = 22;
             this.button6.Text = "Make Available";
             this.button6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -250,7 +250,7 @@
             this.button7.BackColor = System.Drawing.Color.White;
             this.button7.Location = new System.Drawing.Point(261, 351);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(86, 60);
+            this.button7.Size = new System.Drawing.Size(88, 55);
             this.button7.TabIndex = 23;
             this.button7.Text = "Make Available";
             this.button7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -262,7 +262,7 @@
             this.button8.BackColor = System.Drawing.Color.White;
             this.button8.Location = new System.Drawing.Point(363, 351);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(86, 60);
+            this.button8.Size = new System.Drawing.Size(88, 55);
             this.button8.TabIndex = 24;
             this.button8.Text = "Make Available";
             this.button8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -502,6 +502,7 @@
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
+            this.Location = new System.Drawing.Point(100, 100);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Tables";
             this.Text = "TablesForm";

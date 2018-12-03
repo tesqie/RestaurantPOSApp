@@ -51,6 +51,7 @@ namespace RestaurantPOSApp
             //setting Background picture
             this.BackgroundImage = Properties.Resources.menu_frame;
             this.BackgroundImageLayout = ImageLayout.Stretch;
+            this.SetDesktopLocation(300, 100);
 
             // get the username from inventory table
             get_data();

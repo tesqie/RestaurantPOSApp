@@ -68,6 +68,7 @@ namespace RestaurantPOSApp
          */
         private void InvoiceForm_Load(object sender, EventArgs e)
         {
+            this.SetDesktopLocation(300, 100);
             this.BackgroundImage = Properties.Resources.menu_frame;
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
@@ -233,6 +234,11 @@ namespace RestaurantPOSApp
                 menuForm.Visible = true;
                 this.Close();
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
 
