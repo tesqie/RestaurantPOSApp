@@ -1,6 +1,7 @@
 ﻿using RestaurantPOSApp.DataSet1TableAdapters;
 using System;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -33,6 +34,7 @@ namespace RestaurantPOSApp
         int employeeID = int.Parse(Form1.employeeId);
         int orderID, purchaseorderID;
         double salesPrice;
+        string writetofile = "";
 
         /*
          * InvoiceForm default constructor.
@@ -51,7 +53,7 @@ namespace RestaurantPOSApp
             invinForm = invForm;
             this.forInv = fromInv;
             InitializeComponent();
-            
+
 
         }
         public InvoiceForm(Form1 form1)
@@ -160,7 +162,6 @@ namespace RestaurantPOSApp
             double tax;
             DataRow[] dr = null;
 
-
             /*
              * Iterates through the itemID array and displays the itemno, name, quantity and price.
              * First checks whether the order is from menu or inventory.
@@ -181,6 +182,8 @@ namespace RestaurantPOSApp
                         ListViewItem lvi = new ListViewItem(row);
                         listView1.Items.Add(lvi);
                         price += double.Parse(d[4].ToString()) * double.Parse(itemID[i, 1].ToString());
+                        writetofile += (i + 1).ToString() + "\t" + d[2].ToString() + "\t" + itemID[i, 1].ToString() + "\t"
+                            + d[4].ToString() + Environment.NewLine;
                     }
                 }
             }
@@ -195,15 +198,17 @@ namespace RestaurantPOSApp
                         ListViewItem lvi = new ListViewItem(row);
                         listView1.Items.Add(lvi);
                         price += double.Parse(d[2].ToString()) * double.Parse(itemID[i, 1].ToString());
+                        writetofile += (i + 1).ToString() + "\t" + d[1].ToString() + "\t" + itemID[i, 1].ToString() + "\t"
+                            + d[2].ToString() + Environment.NewLine;
                     }
                 }
             }
 
             //Updating price and tax.
             textBoxPrice.Text = price.ToString();
-            tax = Math.Round(price * 0.13,2);
+            tax = Math.Round(price * 0.13, 2);
             textBoxTax.Text = tax.ToString();
-            salesPrice = Math.Round(price + tax,2);
+            salesPrice = Math.Round(price + tax, 2);
             textBoxTotal.Text = salesPrice.ToString();
         }
 
@@ -263,6 +268,11 @@ namespace RestaurantPOSApp
                     ds.Orderline.AddOrderlineRow(olr);
                     olt.Update(ds.Orderline);
                 }
+                string filename = @".\Order" + this.orderID + ".txt";
+                File.WriteAllText(filename, writetofile);
+                MessageBox.Show("Order " + this.orderID + " sucessfully placed.");
+                menuForm.Visible = true;
+                this.Close();
             }
             // Database updates for inventory orders. Updates the PurchaseOrders, PurchaseOrderline and Inventory tables.
             else if (forInv == true)
@@ -302,6 +312,11 @@ namespace RestaurantPOSApp
                     ds.Tables["Inventory"].AcceptChanges();
                     it.Update(ds.Inventory);
                 }
+                string filename = @".\PurchaseOrder" + this.purchaseorderID + ".txt";
+                File.WriteAllText(filename, writetofile);
+                MessageBox.Show("Purchase Order " + this.purchaseorderID + " sucessfully placed.");
+                invinForm.Show();
+                this.Close();
             }
         }
     }

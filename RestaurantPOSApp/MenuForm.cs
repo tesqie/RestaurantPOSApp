@@ -21,6 +21,7 @@ namespace RestaurantPOSApp
         //employee id for Invoice form and table form to access
         public static string employeeId = null;
         bool tableFormInit = false;
+       
         
 
         public Form1()
@@ -49,6 +50,7 @@ namespace RestaurantPOSApp
          */
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             Get_Data();
 
             TimeSpan now = DateTime.Now.TimeOfDay;
@@ -304,6 +306,7 @@ namespace RestaurantPOSApp
                 {
                     employeeId = d[0].ToString();
                     this.Visible = false;
+                    panel6.Hide();
                     if (!tableFormInit)
                     {
                         tablesForm = new Tables(this);
@@ -316,6 +319,39 @@ namespace RestaurantPOSApp
                 }
             }
             MessageBox.Show("Invalid Username/Password combination");
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void Form1_VisibleChanged(object sender, EventArgs e)
+        {
+            if (employeeId != null)
+            {
+                tablesToolStripMenuItem.Visible = true;
+                employeeLoginToolStripMenuItem.Visible = false;
+            }
+
+        }
+
+        private void tablesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tablesForm.Show(this);
+            this.Hide();
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

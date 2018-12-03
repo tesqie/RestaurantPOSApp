@@ -374,7 +374,7 @@ namespace RestaurantPOSApp
         {
 
         }
-        //On Logout button click this form is hidden and menuform will be shown
+        //On back button click this form is hidden and menuform will be shown
         private void button9_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -383,6 +383,17 @@ namespace RestaurantPOSApp
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+
+        }
+        //logout
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form1.employeeId = null;
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+            
+            
 
         }
     }
