@@ -58,7 +58,7 @@ CREATE TABLE Inventory(
 INSERT INTO Inventory(ProductName, Price, OnHand, SupplierID) VALUES
 	('Lettuce', 0.29, 99, 1),
 	('Tomato', 0.34, 59, 2),
-	('Cow', 500.48, 5, 3),
+	('Beef', 30.48, 5, 3),
 	('Bread', 0.99, 78, 1),
 	('Spaghetti', 1.99, 65, 1),
 	('Chicken', 20.99, 30, 3);
